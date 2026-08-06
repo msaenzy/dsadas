@@ -11,10 +11,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script>
-      // Fallback for GitHub Pages if configured to root / instead of /docs
-      if (window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/docs')) {
-        var base = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
-        window.location.replace(base + 'docs/');
+      // Global error logger to prevent silent blank white pages
+      window.addEventListener('error', function(e) {
+        showDiagnosticError('Uncaught Error: ' + e.message + '\nFile: ' + e.filename + ':' + e.lineno);
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        showDiagnosticError('Unhandled Promise Rejection: ' + (e.reason ? (e.reason.stack || e.reason) : 'Unknown reason'));
+      });
+      function showDiagnosticError(msg) {
+        var root = document.getElementById('root');
+        if (root && (!root.children || root.children.length === 0)) {
+          root.innerHTML = '<div style="padding: 24px; font-family: monospace; background: #0d1117; color: #f85149; min-height: 100vh;">' +
+            '<h2 style="color: #ff7b72; margin-top:0;">⚠️ Diagnostic Error Log (White Screen Detected)</h2>' +
+            '<p style="color: #c9d1d9;">The application encountered an error during initialization:</p>' +
+            '<pre style="background: #161b22; padding: 16px; border-radius: 6px; white-space: pre-wrap; color: #ffa657;">' + msg + '</pre>' +
+            '<p style="color: #8b949e; font-size: 12px; margin-top: 16px;">Page URL: ' + window.location.href + '</p>' +
+            '</div>';
+        }
       }
     </script>
   </head>
