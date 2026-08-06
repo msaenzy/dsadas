@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ThemeMode } from '../types';
-import CaseShowcaseGallery from './CaseShowcaseGallery';
+import ProjectCarousel from './ProjectCarousel';
+import ProjectDetailModal from './ProjectDetailModal';
+import { CaseProject, CategoryId } from '../data/projectsData';
 
 interface TestimonialsSectionProps {
   theme: ThemeMode;
   onNavigateToContact?: () => void;
+  onNavigateToGallery?: () => void;
 }
 
-export default function TestimonialsSection({ theme, onNavigateToContact }: TestimonialsSectionProps) {
+export default function TestimonialsSection({
+  theme,
+  onNavigateToContact,
+  onNavigateToGallery
+}: TestimonialsSectionProps) {
   const isLight = theme === 'light';
+  const [selectedCategory, setSelectedCategory] = useState<CategoryId>('medico');
+  const [selectedModalProject, setSelectedModalProject] = useState<CaseProject | null>(null);
 
   return (
     <section
@@ -32,28 +41,41 @@ export default function TestimonialsSection({ theme, onNavigateToContact }: Test
           <span
             className={`font-mono text-xs tracking-widest uppercase font-semibold px-3.5 py-1 rounded-full border ${
               isLight
-                ? 'bg-white border-[#C5A059]/40 text-[#2D3436] font-bold'
+                ? 'bg-white border-[#C5A059]/40 text-[#37526E] font-bold'
                 : 'bg-cyan-950/60 border-cyan-400/30 text-cyan-300'
             }`}
           >
-            Galería de Casos de Éxito
+            Showcase & Casos de Éxito
           </span>
           <h2
             className={`font-display font-extrabold text-3xl sm:text-4xl md:text-5xl mt-4 tracking-tight ${
               isLight ? 'text-[#2D3436]' : 'text-white'
             }`}
           >
-            Galería de Proyectos & Landing Pages por Categoría
+            Galería Interactiva de Proyectos Realizados
           </h2>
           <p className={`mt-4 text-base sm:text-lg leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
-            Filtra por tu sector de actividad (Médico & Dental, Cafetería & Gastronomía, Consultoría & Servicios) para explorar cómo transformamos marcas en Ecuador en canales de captación activa de clientes.
+            Explora nuestros trabajos por categoría sectorial. Cada proyecto es una Landing Page optimizada para la captación real de clientes en Ecuador.
           </p>
         </motion.div>
 
-        {/* Categorized Gallery Component */}
-        <CaseShowcaseGallery theme={theme} onNavigateToContact={onNavigateToContact} />
+        {/* Automatic 4-Column Carousel Component */}
+        <ProjectCarousel
+          theme={theme}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+          onOpenProjectDetail={setSelectedModalProject}
+          onNavigateToGallery={onNavigateToGallery}
+        />
       </div>
+
+      {/* Project Detail Modal */}
+      <ProjectDetailModal
+        project={selectedModalProject}
+        theme={theme}
+        onClose={() => setSelectedModalProject(null)}
+        onNavigateToContact={onNavigateToContact}
+      />
     </section>
   );
 }
-

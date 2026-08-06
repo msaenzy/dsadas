@@ -59,7 +59,11 @@ export default function App() {
             <ValueSection theme={theme} />
             <PlansSection theme={theme} onSelectPlan={handleSelectPlan} />
             <SimulatorSection theme={theme} />
-            <TestimonialsSection theme={theme} onNavigateToContact={() => handleNavigate('contacto')} />
+            <TestimonialsSection
+              theme={theme}
+              onNavigateToContact={() => handleNavigate('contacto')}
+              onNavigateToGallery={() => handleNavigate('casos')}
+            />
             <ContactSection theme={theme} selectedPlanTitle={selectedPlanTitle} />
           </div>
         ) : (
