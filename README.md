@@ -71,9 +71,11 @@ npm run build
 
 El workflow en `.github/workflows/deploy.yml` compila el proyecto y lo despliega automáticamente.
 
-1. En tu repositorio de GitHub, ve a **Settings** > **Pages**.
-2. En la sección **Build and deployment** -> **Source**, selecciona **GitHub Actions**.
-3. Haz un commit/push a la rama `main` (o ejecuta manualmente el workflow desde la pestaña **Actions**).
+> ⚠️ **IMPORTANTE para evitar el error "deploy failure":**
+> 1. En tu repositorio de GitHub, ve a **Settings** > **Pages**.
+> 2. En **Build and deployment** -> **Source**, asegúrate de cambiar de *"Deploy from a branch"* a **"GitHub Actions"**.
+> 3. Si no cambias la opción "Source" a "GitHub Actions", el workflow fallará con error de permisos al intentar desplegar.
+> 4. Vuelve a la pestaña **Actions** > **Deploy Static Site to GitHub Pages** > **Run workflow**.
 
 ---
 
