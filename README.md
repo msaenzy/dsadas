@@ -67,36 +67,24 @@ npm run build
 
 ## 🌐 Despliegue en GitHub Pages
 
-### Opción A: Despliegue Automático con GitHub Actions (Recomendado)
+### Método 1: GitHub Actions (Recomendado)
 
-El archivo `.github/workflows/deploy.yml` ya está configurado. Para activar el despliegue automático:
+El workflow en `.github/workflows/deploy.yml` compila el proyecto y lo despliega automáticamente.
 
-1. Sube el código a tu repositorio en GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit - Standalone GitHub Pages ready"
-   git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-   git push -u origin main
-   ```
-2. En GitHub, ve a **Settings** > **Pages**.
-3. En **Source**, selecciona **GitHub Actions**.
-4. ¡Listo! Cada vez que hagas un `git push` a la rama `main`, GitHub Actions compilará la aplicación y la publicará automáticamente.
+1. En tu repositorio de GitHub, ve a **Settings** > **Pages**.
+2. En la sección **Build and deployment** -> **Source**, selecciona **GitHub Actions**.
+3. Haz un commit/push a la rama `main` (o ejecuta manualmente el workflow desde la pestaña **Actions**).
 
 ---
 
-### Opción B: Despliegue Manual con la rama `gh-pages`
+### Método 2: Despliegue Directo desde la carpeta `/docs`
 
-1. Ejecuta la compilación local:
-   ```bash
-   npm run build
-   ```
-2. Publica el contenido de la carpeta `dist` en la rama `gh-pages`:
-   ```bash
-   npx gh-pages -d dist
-   ```
-3. En GitHub, ve a **Settings** > **Pages** y selecciona la rama `gh-pages`.
+Como el comando `npm run build` genera la versión estática directamente en la carpeta `/docs`:
+
+1. En tu repositorio de GitHub, ve a **Settings** > **Pages**.
+2. En **Source**, selecciona **Deploy from a branch**.
+3. En **Branch**, selecciona **`main`** y en la carpeta elige **`/docs`**.
+4. Haz clic en **Save**. En 1 o 2 minutos tu sitio estará en línea sin pantalla blanca.
 
 ---
 
