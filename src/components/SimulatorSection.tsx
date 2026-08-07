@@ -10,6 +10,7 @@ import {
   Stethoscope,
   Zap,
   Send,
+  CheckCircle2,
 } from 'lucide-react';
 import { ThemeMode } from '../types';
 
@@ -46,7 +47,7 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       shortTag: 'Arquitectura',
       icon: <Building2 className="w-4 h-4" />,
       domain: 'estudio-arquitectura.ec',
-      speed: '⚡ Carga en 0.9s',
+      speed: 'Carga en 0.9s',
       headline: 'Diseñamos Espacios Extraordinarios que Inspiran',
       subheadline: 'Proyectos residenciales y corporativos de alto nivel. Transformamos tus ideas en arquitectura funcional.',
       ctaText: 'Solicitar Asesoría por WhatsApp',
@@ -60,13 +61,13 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       ],
       conversionTip: 'Un mensaje pre-estructurado le ahorra tiempo al cliente y te entrega la información exacta para cotizar de inmediato.',
       waBusinessName: 'Estudio de Arquitectura',
-      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+      waMessage: `¡Hola! Vengo desde su Landing Page.
 
-📌 *Interés:* Asesoría en Arquitectura & Interiorismo
-🏛️ *Tipo de Proyecto:* Remodelación / Obra Nueva
-📍 *Ubicación:* Ecuador
+• *Interés:* Asesoría en Arquitectura & Interiorismo
+• *Tipo de Proyecto:* Remodelación / Obra Nueva
+• *Ubicación:* Ecuador
 
-💬 Quisiera coordinar una cita previa para revisar mi proyecto.`,
+Quisiera coordinar una cita previa para revisar mi proyecto.`,
     },
     {
       id: 'gastronomia',
@@ -74,7 +75,7 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       shortTag: 'Gastronomía',
       icon: <Coffee className="w-4 h-4" />,
       domain: 'bistro-gastronomia.ec',
-      speed: '⚡ Carga en 0.8s',
+      speed: 'Carga en 0.8s',
       headline: 'Sabor Auténtico & Experiencias Únicas',
       subheadline: 'Disfruta de especialidades de café de origen, repostería artesanal y el mejor ambiente de la ciudad.',
       ctaText: 'Ver Menú & Reservar por WhatsApp',
@@ -88,13 +89,13 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       ],
       conversionTip: 'Los clientes prefieren enviar un WhatsApp directo para consultar disponibilidad de mesa o reservar menú.',
       waBusinessName: 'Bistró & Café Artesanal',
-      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+      waMessage: `¡Hola! Vengo desde su Landing Page.
 
-☕ *Interés:* Reserva de Mesa & Menú
-👥 *Personas:* 4 personas
-📅 *Fecha:* Este fin de semana
+• *Interés:* Reserva de Mesa & Menú
+• *Personas:* 4 personas
+• *Fecha:* Este fin de semana
 
-💬 Quisiera consultar disponibilidad de mesa en su local.`,
+Quisiera consultar disponibilidad de mesa en su local.`,
     },
     {
       id: 'fitness',
@@ -102,7 +103,7 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       shortTag: 'Fitness',
       icon: <Dumbbell className="w-4 h-4" />,
       domain: 'coaching-fitness.ec',
-      speed: '⚡ Carga en 0.9s',
+      speed: 'Carga en 0.9s',
       headline: 'Alcanza tu Máximo Rendimiento Físico',
       subheadline: 'Programas de entrenamiento personalizado, nutrición adaptada y resultados garantizados paso a paso.',
       ctaText: 'Agendar Clase Gratis por WhatsApp',
@@ -116,13 +117,13 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       ],
       conversionTip: 'Captura prospectos calificados ofreciendo una evaluación inicial sin costo en un solo clic.',
       waBusinessName: 'Coach Fitness Pro',
-      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+      waMessage: `¡Hola! Vengo desde su Landing Page.
 
-🏋️ *Interés:* Clase de Prueba & Evaluación Gratis
-🎯 *Objetivo:* Tonificación y Aumento de Masa
-⏰ *Disponibilidad:* Horario Mañana / Tarde
+• *Interés:* Clase de Prueba & Evaluación Gratis
+• *Objetivo:* Tonificación y Aumento de Masa
+• *Disponibilidad:* Horario Mañana / Tarde
 
-💬 Quisiera agendar mi primera sesión de evaluación.`,
+Quisiera agendar mi primera sesión de evaluación.`,
     },
     {
       id: 'salud',
@@ -130,7 +131,7 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       shortTag: 'Salud & Odonto',
       icon: <Stethoscope className="w-4 h-4" />,
       domain: 'clinica-dental.ec',
-      speed: '⚡ Carga en 0.9s',
+      speed: 'Carga en 0.9s',
       headline: 'Tu Sonrisa y Salud en Manos de Especialistas',
       subheadline: 'Atención médica y odontológica avanzada con tecnología de vanguardia y tratamientos sin dolor.',
       ctaText: 'Agendar Cita Odontológica por WhatsApp',
@@ -144,13 +145,13 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
       ],
       conversionTip: 'La inmediatez en respuestas médicas y dentales transmite seguridad y genera la cita al instante.',
       waBusinessName: 'Clínica Dental Especializada',
-      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+      waMessage: `¡Hola! Vengo desde su Landing Page.
 
-🩺 *Interés:* Consulta y Valoración Odontológica
-🦷 *Tratamiento:* Limpieza / Ortodoncia / Blanqueamiento
-📍 *Ciudad:* Quito / Guayaquil
+• *Interés:* Consulta y Valoración Odontológica
+• *Tratamiento:* Limpieza / Ortodoncia / Blanqueamiento
+• *Ciudad:* Quito / Guayaquil
 
-💬 Quisiera consultar disponibilidad de agenda para esta semana.`,
+Quisiera consultar disponibilidad de agenda para esta semana.`,
     },
   ];
 
@@ -421,8 +422,9 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
                     </button>
 
                     {sentNotice && (
-                      <div className="text-[9px] text-center text-emerald-300 font-mono bg-emerald-950/80 border border-emerald-500/40 py-1 px-1 rounded animate-fade-in">
-                        ✓ ¡Mensaje generado y enviado con éxito!
+                      <div className="text-[9px] text-center text-emerald-300 font-mono bg-emerald-950/80 border border-emerald-500/40 py-1 px-1 rounded animate-fade-in flex items-center justify-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                        <span>¡Mensaje generado y enviado con éxito!</span>
                       </div>
                     )}
                   </div>

@@ -316,8 +316,9 @@ export const ProcessPathSection: React.FC<ProcessPathSectionProps> = ({ theme })
           <Sparkles className="w-3.5 h-3.5 text-cyan-500" />
           <span>Progreso simulado de la ruta: {Math.round(progress)}%</span>
         </div>
-        <div className="font-sans font-medium text-slate-600 dark:text-slate-300">
-          📍 Haz clic en cualquier paso para desplazar la barra vertical directamente a esa fase.
+        <div className="font-sans font-medium text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+          <MapPin className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
+          <span>Haz clic en cualquier paso para desplazar la barra vertical directamente a esa fase.</span>
         </div>
       </div>
     </div>

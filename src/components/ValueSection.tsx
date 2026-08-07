@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { Zap, MessageCircle, Smartphone, Headphones } from 'lucide-react';
 import { ThemeMode } from '../types';
 
@@ -41,6 +41,32 @@ export default function ValueSection({ theme }: ValueSectionProps) {
     },
   ];
 
+  // Motion variants for stagger reveal
+  const containerVariants: Variants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // 150ms between each card
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20, // 20px upward movement
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
     <section
       id="nosotros"
@@ -53,10 +79,10 @@ export default function ValueSection({ theme }: ValueSectionProps) {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span
@@ -80,14 +106,17 @@ export default function ValueSection({ theme }: ValueSectionProps) {
         </motion.div>
 
         {/* 4 Grid cards with staggered motion */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {values.map((v) => (
             <motion.div
               key={v.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
+              variants={cardVariants}
               className={`group relative rounded-2xl p-6 sm:p-7 border flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-md ${
                 isLight
                   ? 'bg-[#F2F5F9] border-[#4A6A8C]/20 hover:border-[#4A6A8C] hover:bg-white'
@@ -130,7 +159,7 @@ export default function ValueSection({ theme }: ValueSectionProps) {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
