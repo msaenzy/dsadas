@@ -87,9 +87,12 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
                 <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
                   Correo Electrónico
                 </p>
-                <p className={`text-sm ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
-                  hola@spondylusdigital.com
-                </p>
+                <a
+                  href="mailto:contacto@spondylussolucionesdigitales.com"
+                  className={`text-sm hover:underline ${isLight ? 'text-[#4A6A8C] font-semibold' : 'text-cyan-400'}`}
+                >
+                  contacto@spondylussolucionesdigitales.com
+                </a>
               </div>
             </div>
 

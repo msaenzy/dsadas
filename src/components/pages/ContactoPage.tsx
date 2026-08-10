@@ -108,7 +108,7 @@ export default function ContactoPage({ theme, selectedPlanTitle }: ContactoPageP
                 </div>
                 <div>
                   <p className={`text-xs font-mono uppercase font-bold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Correo Electrónico</p>
-                  <p className={`text-sm font-semibold mt-0.5 ${isLight ? 'text-slate-900' : 'text-white'}`}>hola@spondylusdigital.com</p>
+                  <a href="mailto:contacto@spondylussolucionesdigitales.com" className={`text-sm font-semibold mt-0.5 block hover:underline ${isLight ? 'text-cyan-700' : 'text-cyan-400'}`}>contacto@spondylussolucionesdigitales.com</a>
                 </div>
               </div>
 
