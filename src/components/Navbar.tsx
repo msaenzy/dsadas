@@ -134,6 +134,7 @@ export default function Navbar({
 
         {/* Actions & Day/Night Toggle */}
         <div className="hidden lg:flex items-center gap-3">
+          {/* Theme Toggle */}
           <button
             onClick={onToggleTheme}
             aria-label="Cambiar tema día/noche"
@@ -226,7 +227,7 @@ export default function Navbar({
             })}
           </ul>
 
-          <div className="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+          <div className="mt-4 pt-3 border-t border-slate-200/80 dark:border-slate-800">
             <button
               onClick={() => handleNavClick('contacto')}
               className={`w-full flex items-center justify-center gap-2 font-semibold text-sm px-5 py-3 rounded-full text-center ${

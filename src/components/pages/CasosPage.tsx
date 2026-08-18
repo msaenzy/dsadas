@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, MessageCircle, Instagram } from 'lucide-react';
 import { ThemeMode } from '../../types';
 import CaseShowcaseGallery from '../CaseShowcaseGallery';
 
@@ -57,13 +57,33 @@ export default function CasosPage({ theme, onNavigateTo }: CasosPageProps) {
         <p className="text-sm max-w-xl mx-auto text-white/80 mb-6">
           Te orientamos para estructurar la Landing Page ideal según tu nicho de mercado en Ecuador, con entrega garantizada en 2 a 5 días laborables.
         </p>
-        <button
-          onClick={() => onNavigateTo('contacto')}
-          className="cta-shimmer inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm bg-[#C5A059] hover:bg-[#A3813B] text-[#2D3436] shadow-md cursor-pointer transition-transform hover:-translate-y-0.5"
-        >
-          <span>Iniciar mi Proyecto de Landing Page</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <button
+            onClick={() => onNavigateTo('contacto')}
+            className="cta-shimmer inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm bg-[#C5A059] hover:bg-[#A3813B] text-[#2D3436] shadow-md cursor-pointer transition-transform hover:-translate-y-0.5"
+          >
+            <span>Iniciar mi Proyecto de Landing Page</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+          <a
+            href="https://wa.me/593958876957"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm bg-emerald-500 hover:bg-emerald-400 text-white shadow-md cursor-pointer transition-transform hover:-translate-y-0.5"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp Directo
+          </a>
+          <a
+            href="https://www.instagram.com/spondylussoluciones/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm bg-pink-600 hover:bg-pink-500 text-white shadow-md cursor-pointer transition-transform hover:-translate-y-0.5"
+          >
+            <Instagram className="w-4 h-4" />
+            Instagram
+          </a>
+        </div>
       </div>
     </div>
   );

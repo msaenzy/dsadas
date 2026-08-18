@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, X, ArrowRight, Layers, ShieldCheck, Sparkles, Clock, Globe, MessageSquare, Code } from 'lucide-react';
+import { Check, X, ArrowRight, Layers, ShieldCheck, Sparkles, Clock, Globe, MessageSquare, Code, Instagram, MessageCircle, Phone } from 'lucide-react';
 import { ThemeMode } from '../../types';
 import { SimulatorSection } from '../SimulatorSection';
 
@@ -335,6 +335,33 @@ export default function PlanesPage({ theme, onSelectPlan }: PlanesPageProps) {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Personalized Consultation Card */}
+        <div
+          className={`rounded-3xl p-6 sm:p-8 border text-center space-y-4 ${
+            isLight
+              ? 'bg-white border-[#4A6A8C]/20 shadow-sm'
+              : 'bg-slate-900/80 border-slate-800'
+          }`}
+        >
+          <h3 className={`font-display font-extrabold text-xl ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+            ¿Tienes dudas sobre qué plan se ajusta a tu negocio?
+          </h3>
+          <p className={`text-xs max-w-lg mx-auto leading-relaxed ${isLight ? 'text-[#2D3436]/75' : 'text-slate-400'}`}>
+            Te brindamos asesoría personalizada y respondemos de inmediato con una cotización clara y transparente.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a
+              href="https://wa.me/593958876957"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs bg-emerald-500 hover:bg-emerald-400 text-white shadow-sm transition-transform hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>Chatear por WhatsApp (+593 958 876 957)</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

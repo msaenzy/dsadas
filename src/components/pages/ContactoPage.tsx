@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Clock, ShieldCheck, Instagram } from 'lucide-react';
 import { ThemeMode, ContactFormData } from '../../types';
 
 interface ContactoPageProps {
@@ -98,6 +98,28 @@ export default function ContactoPage({ theme, selectedPlanTitle }: ContactoPageP
                   <p className="text-xs opacity-90">Atención Directa e Inmediata</p>
                   <span className="text-[10px] font-mono uppercase tracking-wider underline font-semibold mt-1 block">
                     Click para chatear inmediatamente →
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/spondylussoluciones/"
+                target="_blank"
+                rel="noreferrer"
+                className={`p-4 rounded-2xl border flex items-center gap-4 transition-all hover:-translate-y-0.5 ${
+                  isLight
+                    ? 'bg-pink-50/80 border-pink-200 text-pink-900 hover:bg-pink-100/80'
+                    : 'bg-pink-950/30 border-pink-800/60 text-pink-300 hover:bg-pink-950/50'
+                }`}
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <Instagram className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm">Instagram Oficial</p>
+                  <p className="text-xs opacity-90">@spondylussoluciones</p>
+                  <span className="text-[10px] font-mono uppercase tracking-wider underline font-semibold mt-1 block">
+                    Ver perfil y enviar DM →
                   </span>
                 </div>
               </a>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Instagram } from 'lucide-react';
 import { ThemeMode, ContactFormData } from '../types';
 
 interface ContactSectionProps {
@@ -108,17 +108,44 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
               </div>
               <div>
                 <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
-                  WhatsApp Directo
+                  Celular / WhatsApp
                 </p>
                 <a
                   href="https://wa.me/593958876957"
                   target="_blank"
                   rel="noreferrer"
-                  className={`text-sm hover:underline ${
-                    isLight ? 'text-[#4A6A8C] font-bold' : 'text-cyan-400'
+                  className={`text-sm hover:underline font-mono ${
+                    isLight ? 'text-[#4A6A8C] font-bold' : 'text-cyan-400 font-semibold'
                   }`}
                 >
-                  Click aquí para chatear por WhatsApp
+                  +593 958 876 957
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div
+                className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${
+                  isLight
+                    ? 'bg-white border-pink-400/30 text-pink-600'
+                    : 'bg-pink-500/10 border-pink-500/30 text-pink-400'
+                }`}
+              >
+                <Instagram className="w-5 h-5" />
+              </div>
+              <div>
+                <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+                  Instagram Oficial
+                </p>
+                <a
+                  href="https://www.instagram.com/spondylussoluciones/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`text-sm hover:underline ${
+                    isLight ? 'text-pink-700 font-bold' : 'text-pink-400 font-semibold'
+                  }`}
+                >
+                  @spondylussoluciones
                 </a>
               </div>
             </div>
@@ -138,7 +165,7 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
                   Ubicación Principal
                 </p>
                 <p className={`text-sm ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
-                  Guayaquil, Ecuador · Atención remota y presencial
+                  Guayaquil, Ecuador · Cobertura y atención nacional
                 </p>
               </div>
             </div>

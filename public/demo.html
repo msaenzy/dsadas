@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Personalizado | Spondylus Soluciones Digitales</title>
+  <meta name="description" content="Propuesta de Landing Page estratégica creada por Spondylus Soluciones Digitales - Guayaquil, Ecuador." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#4A6A8C',
+              gold: '#C5A059',
+              goldHover: '#A3813B',
+              cyan: '#22d3ee',
+              dark: '#0a0f1d'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-hero-dental {
+      background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.15), transparent 45%),
+                  radial-gradient(circle at bottom left, rgba(74, 106, 140, 0.15), transparent 45%);
+    }
+    .gradient-hero-design {
+      background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.2), transparent 45%),
+                  radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.15), transparent 45%);
+    }
+    .badge-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-[#C5A059] selection:text-white">
+
+  <!-- TOP BAR SPONDYLUS -->
+  <header id="spondylus-header" class="sticky top-0 z-50 bg-[#070b14]/95 backdrop-blur-md border-b border-cyan-900/40 text-white px-4 py-2.5 transition-all">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2 group">
+          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#22d3ee" stroke-width="1.6" opacity="0.95">
+              <path d="M6 34 C6 20, 14 12, 30 10" stroke-linecap="round" />
+              <path d="M6 34 C8 22, 16 16, 30 10" stroke="#fcd34d" opacity="0.9" stroke-linecap="round" />
+              <path d="M6 34 C10 24, 18 20, 30 10" stroke-linecap="round" />
+            </g>
+            <circle cx="6" cy="34" r="2.2" fill="#22d3ee" />
+          </svg>
+          <span class="font-display font-bold text-sm tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+            Spondylus<span class="text-cyan-400">.</span>
+          </span>
+        </a>
+        <span class="hidden sm:inline-block text-xs bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 px-2.5 py-0.5 rounded-full font-mono">
+          Demo Exclusivo
+        </span>
+      </div>
+
+      <!-- Prospect Greeting Container -->
+      <div id="prospect-pill" class="text-xs text-slate-300 flex items-center gap-2 bg-slate-900/90 border border-slate-700/60 px-3 py-1 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-medium text-slate-200">Propuesta para: <strong id="prospect-name" class="text-white font-bold">Cargando...</strong></span>
+      </div>
+
+      <!-- CTA Instagram DM -->
+      <div class="flex items-center gap-2">
+        <a href="https://ig.me/m/spondylussoluciones" target="_blank" rel="noreferrer" 
+           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white shadow-md transition-all hover:scale-105">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          <span>Solicitar esta Landing por DM</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DYNAMIC CONTAINER -->
+  <main id="app-container">
+    <!-- State: Loading -->
+    <div id="state-loading" class="min-h-[80vh] flex flex-col items-center justify-center p-6 text-center">
+      <div class="w-12 h-12 border-4 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
+      <p class="text-base font-semibold text-slate-700">Cargando demo personalizado...</p>
+      <p class="text-xs text-slate-500 mt-1">Validando registro con Spondylus Soluciones Digitales</p>
+    </div>
+
+    <!-- State: Error 404 Not Found -->
+    <div id="state-error" class="hidden min-h-[80vh] flex flex-col items-center justify-center p-6 text-center max-w-lg mx-auto">
+      <div class="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4 mx-auto">
+        <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+      </div>
+      <h1 class="text-2xl font-bold font-display text-slate-900 mb-2">Demo no encontrado o enlace inválido</h1>
+      <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+        El identificador del demo solicitado no existe en la base de datos de <strong class="text-slate-800">Spondylus Soluciones Digitales</strong> o el enlace ha caducado.
+      </p>
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm w-full mb-6 text-left">
+        <p class="text-xs font-mono text-slate-500 mb-1">Demos de demostración rápidos disponibles:</p>
+        <div class="flex flex-col gap-2 mt-2">
+          <a href="demo.html?id=demo_dental" class="text-xs font-semibold text-cyan-600 hover:text-cyan-700 flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
+            <span>✨ Ver Demo Odontológico / Dental</span>
+            <span>→</span>
+          </a>
+          <a href="demo.html?id=demo_diseno" class="text-xs font-semibold text-pink-600 hover:text-pink-700 flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
+            <span>🎨 Ver Demo Estudio de Diseño & Branding</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+      <a href="https://ig.me/m/spondylussoluciones" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white shadow-md">
+        <i data-lucide="instagram" class="w-4 h-4"></i>
+        <span>Contactar al equipo por Instagram</span>
+      </a>
+    </div>
+
+    <!-- TEMPLATE 1: DENTAL / ODONTOLOGÍA -->
+    <div id="template-dental" class="hidden">
+      <!-- HERO DENTAL -->
+      <section class="gradient-hero-dental relative pt-12 pb-20 px-4 sm:px-6 overflow-hidden bg-white">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-left">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-50 border border-cyan-200 text-cyan-800">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                <span>Especialistas en Odontología Estética y Digital</span>
+              </div>
+              
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-[1.15]">
+                Sonrisas saludables y perfectas con <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">tecnología 3D sin dolor</span>.
+              </h1>
+              
+              <p class="text-base text-slate-600 leading-relaxed">
+                Atención odontológica integral en <strong class="text-slate-800">Ecuador</strong>. Especialistas certificados en diseño de sonrisa, ortodoncia invisible e implantes dentales con facilidades de pago.
+              </p>
+
+              <!-- Social Proof Pills -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                  <div class="font-display font-extrabold text-xl text-cyan-600">+1,400</div>
+                  <div class="text-[11px] font-medium text-slate-500">Sonrisas diseñadas</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                  <div class="font-display font-extrabold text-xl text-blue-600">100%</div>
+                  <div class="text-[11px] font-medium text-slate-500">Sin dolor y digital</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 col-span-2 sm:col-span-1">
+                  <div class="font-display font-extrabold text-xl text-amber-600">4.9 ★</div>
+                  <div class="text-[11px] font-medium text-slate-500">Calificación Google</div>
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-wrap items-center gap-3 pt-3">
+                <a href="https://ig.me/m/spondylussoluciones" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-cyan-600 hover:bg-cyan-700 text-white shadow-lg shadow-cyan-600/25 transition-all hover:-translate-y-0.5">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>Agendar Consulta de Valoración</span>
+                </a>
+                <a href="https://wa.me/593958876957?text=Hola%20Spondylus,%20vi%20el%20demo%20dental%20y%20quiero%20cotizar%20mi%20landing" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 transition-all">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                  <span>WhatsApp Directo</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Image / Visual Mockup -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md rounded-3xl p-3 bg-gradient-to-b from-cyan-500/20 to-blue-600/10 border border-cyan-200 shadow-xl bg-white">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+                     alt="Odontología Estética" 
+                     class="rounded-2xl w-full h-[360px] object-cover" />
+                
+                <!-- Floating Floating Card -->
+                <div class="absolute -bottom-5 -left-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900">Escaneo 3D Digital</div>
+                    <div class="text-[10px] text-slate-500">Visualiza tu resultado antes de iniciar</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES DENTAL -->
+      <section class="py-16 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto text-center space-y-12">
+          <div class="max-w-xl mx-auto space-y-3">
+            <span class="text-xs font-bold text-cyan-600 uppercase tracking-widest font-mono">Tratamientos de Vanguardia</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-slate-900">Especialidades para transformar tu sonrisa</h2>
+            <p class="text-xs text-slate-600">Materiales de alta durabilidad y tecnología indolora en cada procedimiento.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-cyan-400 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center">
+                <i data-lucide="smile" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Diseño de Sonrisa & Carillas</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Carillas cerámicas y de resina de alta estética. Armonización anatómica dental personalizada.</p>
+              <ul class="text-xs space-y-1.5 text-slate-700 font-medium pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600"></i> Planificación digital 3D</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600"></i> Mínimo desgaste dental</li>
+              </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-cyan-400 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Ortodoncia Invisible & Brackets</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Alineadores transparentes removibles y brackets de autoligado para corregir tu mordida en menor tiempo.</p>
+              <ul class="text-xs space-y-1.5 text-slate-700 font-medium pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Cómodo y 100% estético</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Citas mensuales de control</li>
+              </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-cyan-400 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Implantes & Blanqueamiento LED</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">Recupera la funcionalidad de tus dientes y aclara hasta 4 tonos en una sola sesión clínica segura.</p>
+              <ul class="text-xs space-y-1.5 text-slate-700 font-medium pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i> Titanio de grado médico</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i> Sin sensibilidad excesiva</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS & TRUST -->
+      <section class="py-16 px-4 sm:px-6 bg-white">
+        <div class="max-w-5xl mx-auto space-y-10">
+          <div class="text-center max-w-lg mx-auto">
+            <h2 class="text-2xl font-bold font-display text-slate-900">Historias de pacientes satisfechos</h2>
+            <p class="text-xs text-slate-500 mt-1">Garantizamos una experiencia cómoda, segura y profesional.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-cyan-50/50 border border-cyan-100 space-y-3">
+              <div class="flex text-amber-500 gap-1 text-xs">★★★★★</div>
+              <p class="text-xs text-slate-700 italic leading-relaxed">
+                "Tenía mucho miedo a los tratamientos dentales por malas experiencias pasadas, pero aquí la atención fue 100% indolora y el resultado de mis carillas superó mis expectativas."
+              </p>
+              <div class="pt-2 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-cyan-200 text-cyan-800 font-bold text-xs flex items-center justify-center">MV</div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">María Valentina R.</div>
+                  <div class="text-[10px] text-slate-500">Diseño de Sonrisa · Guayaquil</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-3">
+              <div class="flex text-amber-500 gap-1 text-xs">★★★★★</div>
+              <p class="text-xs text-slate-700 italic leading-relaxed">
+                "Excelente puntualidad y el escaneo 3D me permitió ver exactamente cómo quedaría mi mordida con los alineadores invisibles. Muy recomendados."
+              </p>
+              <div class="pt-2 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-blue-200 text-blue-800 font-bold text-xs flex items-center justify-center">JC</div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Juan Carlos P.</div>
+                  <div class="text-[10px] text-slate-500">Ortodoncia Invisible · Samborondón</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL DENTAL -->
+      <section class="py-16 px-4 bg-gradient-to-br from-slate-900 to-cyan-950 text-white text-center">
+        <div class="max-w-3xl mx-auto space-y-6">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+            Agenda tu cita hoy mismo
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">¿Listo para lucir tu mejor sonrisa?</h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+            Escríbenos por Instagram o WhatsApp para recibir una valoración inicial y conocer nuestras facilidades de pago en Ecuador.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <a href="https://ig.me/m/spondylussoluciones" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white shadow-xl transition-all hover:scale-105">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+              <span>Agendar por Instagram DM</span>
+            </a>
+            <a href="https://wa.me/593958876957" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-xl transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp +593 958 876 957</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TEMPLATE 2: DISEÑO GRÁFICO & BRANDING -->
+    <div id="template-diseno" class="hidden">
+      <!-- HERO DISEÑO -->
+      <section class="gradient-hero-design relative pt-12 pb-20 px-4 sm:px-6 overflow-hidden bg-slate-950 text-white">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-left">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-pink-950/60 border border-pink-700/50 text-pink-300">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                <span>Studio de Branding & Estrategia Visual</span>
+              </div>
+              
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight leading-[1.15]">
+                Marcas memorables que <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-pink-400 to-cyan-400">atraen clientes y multiplican ventas</span>.
+              </h1>
+              
+              <p class="text-base text-slate-300 leading-relaxed">
+                Diseñamos identidades visuales estratégicas, empaques, diseño editorial y dirección de arte para negocios y emprendedores de alto nivel en <strong class="text-white">Ecuador y Latinoamérica</strong>.
+              </p>
+
+              <!-- Highlight Stats -->
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="font-display font-extrabold text-xl text-amber-400">+80</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Marcas Creadas</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="font-display font-extrabold text-xl text-pink-400">100%</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Diseño Original</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div class="font-display font-extrabold text-xl text-cyan-400">Top 1%</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Impacto Visual</div>
+                </div>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-wrap items-center gap-3 pt-3">
+                <a href="https://ig.me/m/spondylussoluciones" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white shadow-lg shadow-pink-600/30 transition-all hover:-translate-y-0.5">
+                  <i data-lucide="instagram" class="w-4 h-4"></i>
+                  <span>Cotizar Proyecto de Marca por DM</span>
+                </a>
+                <a href="https://wa.me/593958876957?text=Hola%20Spondylus,%20vi%20el%20demo%20de%20diseño%20y%20quiero%20cotizar%20mi%20landing" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-slate-900 border border-slate-700 text-slate-200 hover:bg-slate-800 transition-all">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>WhatsApp Directo</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Image Showcase -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md rounded-3xl p-3 bg-gradient-to-b from-pink-500/20 to-amber-500/10 border border-pink-500/30 shadow-2xl bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80" 
+                     alt="Brand Design & Creative Studio" 
+                     class="rounded-2xl w-full h-[360px] object-cover" />
+                
+                <!-- Floating Floating Card -->
+                <div class="absolute -bottom-5 -right-4 bg-slate-900/95 backdrop-blur-md p-4 rounded-2xl border border-slate-700 shadow-xl flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center">
+                    <i data-lucide="palette" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-white">Manual de Marca Completo</div>
+                    <div class="text-[10px] text-slate-400">Tipografías, paletas y aplicaciones</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO / SERVICES DESIGN -->
+      <section class="py-16 px-4 sm:px-6 bg-slate-900 text-white border-y border-slate-800">
+        <div class="max-w-6xl mx-auto space-y-12">
+          <div class="text-center max-w-xl mx-auto space-y-3">
+            <span class="text-xs font-bold text-pink-400 uppercase tracking-widest font-mono">Servicios Creativos</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold font-display">Soluciones visuales de alto calibre</h2>
+            <p class="text-xs text-slate-400">Transformamos ideas abstractas en activos de marca altamente cotizados.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <!-- Service 1 -->
+            <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/60 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white">Branding & Identidad Visual</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">Logotipos, sistemas visuales, paletas cromáticas y manuales de estilo que posicionan tu empresa en el mercado premium.</p>
+              <div class="text-xs text-pink-400 font-semibold pt-2 flex items-center gap-1">
+                <span>Estrategia + Diseño</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/60 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                <i data-lucide="package" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white">Packaging & Diseño de Empaque</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">Etiquetas, cajas y empaques listos para imprenta con troqueles de precisión que destacan en cualquier percha.</p>
+              <div class="text-xs text-amber-400 font-semibold pt-2 flex items-center gap-1">
+                <span>Listos para producción</span>
+                <span>→</span>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/60 transition-all space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                <i data-lucide="layout" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-lg text-white">Diseño UI/UX & Redes Sociales</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">Templates para Instagram, piezas publicitarias de alta conversión y diseño de interfaces web modernas.</p>
+              <div class="text-xs text-cyan-400 font-semibold pt-2 flex items-center gap-1">
+                <span>Alto Engagement</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CREATIVE PROCESS -->
+      <section class="py-16 px-4 sm:px-6 bg-slate-950 text-white">
+        <div class="max-w-5xl mx-auto space-y-10">
+          <div class="text-center max-w-lg mx-auto">
+            <h2 class="text-2xl font-bold font-display">Metodología de Creación en 4 Fases</h2>
+            <p class="text-xs text-slate-400 mt-1">Garantizamos entregas en tiempo récord y sin sorpresas.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+              <div class="text-xs font-mono font-bold text-pink-400">01 / BRIEF</div>
+              <h4 class="font-bold text-sm text-white">Diagnóstico & Estrategia</h4>
+              <p class="text-[11px] text-slate-400">Definición de público, competencia y pilares conceptuales.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+              <div class="text-xs font-mono font-bold text-amber-400">02 / MOODBOARD</div>
+              <h4 class="font-bold text-sm text-white">Exploración Visual</h4>
+              <p class="text-[11px] text-slate-400">Ruta estética, referencias y paleta de texturas/tipografías.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+              <div class="text-xs font-mono font-bold text-cyan-400">03 / DISEÑO</div>
+              <h4 class="font-bold text-sm text-white">Propuesta y Ajustes</h4>
+              <p class="text-[11px] text-slate-400">Desarrollo de propuestas aplicadas en mockups reales.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+              <div class="text-xs font-mono font-bold text-emerald-400">04 / ENTREGA</div>
+              <h4 class="font-bold text-sm text-white">Master Files</h4>
+              <p class="text-[11px] text-slate-400">Archivos vectoriales (.AI, .PDF, .SVG) y manual de uso.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL DISEÑO -->
+      <section class="py-16 px-4 bg-gradient-to-br from-pink-950 via-slate-950 to-slate-900 text-white text-center border-t border-pink-900/30">
+        <div class="max-w-3xl mx-auto space-y-6">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40">
+            Hablemos de tu próximo gran proyecto
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">¿Tu marca necesita un nuevo nivel de impacto?</h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+            Conversemos directamente por Instagram DM y definamos la mejor estrategia visual para tu marca.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <a href="https://ig.me/m/spondylussoluciones" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white shadow-xl transition-all hover:scale-105">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+              <span>Conversar por Instagram DM</span>
+            </a>
+            <a href="https://wa.me/593958876957" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-xl transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp Directo</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- SCRIPT PAPAPARSE & ROUTER LOGIC -->
+  <script>
+    // Inicializar Lucide Icons
+    function initIcons() {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initIcons();
+
+      // 1. Obtener ID de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const prospectId = urlParams.get('id');
+
+      const stateLoading = document.getElementById('state-loading');
+      const stateError = document.getElementById('state-error');
+      const templateDental = document.getElementById('template-dental');
+      const templateDiseno = document.getElementById('template-diseno');
+      const prospectNameEl = document.getElementById('prospect-name');
+
+      if (!prospectId) {
+        stateLoading.classList.add('hidden');
+        stateError.classList.remove('hidden');
+        initIcons();
+        return;
+      }
+
+      // 2. Cargar y parsear el archivo CSV
+      Papa.parse('/demos-posibles-clientes.csv', {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const rows = results.data;
+          const matched = rows.find(r => r.id && r.id.trim() === prospectId.trim());
+
+          stateLoading.classList.add('hidden');
+
+          if (!matched) {
+            stateError.classList.remove('hidden');
+            initIcons();
+            return;
+          }
+
+          // Prospecto encontrado
+          const clientName = matched.nombre_cliente ? matched.nombre_cliente.trim() : 'Cliente';
+          const businessType = matched.tipo_negocio ? matched.tipo_negocio.trim().toLowerCase() : '';
+
+          prospectNameEl.textContent = clientName;
+          document.title = `Demo para ${clientName} | Spondylus`;
+
+          if (businessType === 'dental') {
+            templateDental.classList.remove('hidden');
+          } else if (businessType === 'diseniador' || businessType === 'diseno' || businessType === 'diseño') {
+            templateDiseno.classList.remove('hidden');
+          } else {
+            // Default fallback si es otro nicho (ej. medico usa dental adaptado o diseño)
+            templateDental.classList.remove('hidden');
+          }
+
+          initIcons();
+        },
+        error: function(err) {
+          console.error("Error al leer CSV:", err);
+          stateLoading.classList.add('hidden');
+          stateError.classList.remove('hidden');
+          initIcons();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

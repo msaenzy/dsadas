@@ -14,6 +14,7 @@ import PlanesPage from './components/pages/PlanesPage';
 import CasosPage from './components/pages/CasosPage';
 import ContactoPage from './components/pages/ContactoPage';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   // Default to 'light' (Versión de día) as requested
@@ -122,6 +123,7 @@ export default function App() {
       </main>
 
       <Footer theme={theme} />
+      <WhatsAppButton theme={theme} />
     </div>
   );
 }

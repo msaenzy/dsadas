@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Star, Instagram, MessageCircle } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface HeroSectionProps {
