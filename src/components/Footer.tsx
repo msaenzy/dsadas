@@ -23,25 +23,11 @@ export default function Footer({ theme }: FooterProps) {
           {/* Brand & Mission */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-sm">
             <div className="flex items-center gap-2.5">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g stroke={isLight ? '#4A6A8C' : '#22d3ee'} strokeWidth="1.4" opacity="0.9">
-                  <path d="M6 34 C6 20, 14 12, 30 10" strokeLinecap="round" />
-                  <path
-                    d="M6 34 C8 22, 16 16, 30 10"
-                    stroke={isLight ? '#C5A059' : '#fcd34d'}
-                    opacity="0.8"
-                    strokeLinecap="round"
-                  />
-                  <path d="M6 34 C10 24, 18 20, 30 10" strokeLinecap="round" />
-                </g>
-                <circle cx="6" cy="34" r="2.2" fill={isLight ? '#4A6A8C' : '#22d3ee'} />
-              </svg>
+              <img
+                src="/logo.svg"
+                alt="Spondylus Logo"
+                className="w-8 h-8 object-contain shrink-0"
+              />
               <span
                 className={`font-display font-extrabold text-xl ${
                   isLight ? 'text-[#4A6A8C]' : 'text-white'

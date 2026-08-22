@@ -58,33 +58,11 @@ export default function Navbar({
           onClick={() => handleNavClick('inicio')}
           className="flex items-center gap-2.5 group cursor-pointer text-left"
         >
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="shrink-0 transition-transform duration-300 group-hover:scale-105"
-          >
-            <circle cx="12" cy="28" r="18" fill="none" />
-            <g stroke={isLight ? '#4A6A8C' : '#6787A9'} strokeWidth="1.6" opacity="0.95">
-              <path d="M6 34 C6 20, 14 12, 30 10" strokeLinecap="round" />
-              <path
-                d="M6 34 C8 22, 16 16, 30 10"
-                stroke={isLight ? '#C5A059' : '#E4C65D'}
-                opacity="0.9"
-                strokeLinecap="round"
-              />
-              <path d="M6 34 C10 24, 18 20, 30 10" strokeLinecap="round" />
-              <path
-                d="M6 34 C12 26, 20 24, 30 10"
-                stroke={isLight ? '#C5A059' : '#E4C65D'}
-                opacity="0.6"
-                strokeLinecap="round"
-              />
-            </g>
-            <circle cx="6" cy="34" r="2.8" fill={isLight ? '#C5A059' : '#E4C65D'} />
-          </svg>
+          <img
+            src="/logo.svg"
+            alt="Spondylus Logo"
+            className="w-9 h-9 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+          />
           <div>
             <span
               className={`font-display font-extrabold text-xl tracking-tight transition-colors block leading-none ${
