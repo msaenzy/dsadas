@@ -14,7 +14,8 @@ import {
   ArrowRight,
   Eye,
   CheckCircle2,
-  Code
+  Code,
+  Layers
 } from 'lucide-react';
 import { projectsData, CaseProject, CategoryId, CATEGORIES_CONFIG } from '../data/projectsData';
 import { ThemeMode } from '../types';
@@ -224,12 +225,18 @@ export default function CaseShowcaseGallery({
                       </span>
                     </div>
 
-                    {/* Location Badge */}
-                    <div className="absolute bottom-3 left-3">
+                    {/* Location Badge & Multi-Image Gallery Indicator */}
+                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold bg-slate-950/80 text-white backdrop-blur-xs">
                         <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
                         <span>{project.location}</span>
                       </span>
+                      {project.gallery && project.gallery.length > 1 && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-pink-600/90 text-white shadow-md backdrop-blur-xs">
+                          <Layers className="w-3 h-3 text-pink-200" />
+                          <span>{project.gallery.length} fotos</span>
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

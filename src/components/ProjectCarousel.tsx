@@ -14,7 +14,8 @@ import {
   ExternalLink,
   ArrowRight,
   Eye,
-  LayoutGrid
+  LayoutGrid,
+  Layers
 } from 'lucide-react';
 import { projectsData, CaseProject, CategoryId, CATEGORIES_CONFIG } from '../data/projectsData';
 import { ThemeMode } from '../types';
@@ -284,12 +285,18 @@ export default function ProjectCarousel({
                       </span>
                     </div>
 
-                    {/* Category Label Overlay */}
-                    <div className="absolute bottom-2 left-2">
+                    {/* Category / Location Label Overlay */}
+                    <div className="absolute bottom-2 left-2 flex items-center gap-1">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-slate-950/80 text-white backdrop-blur-xs">
                         <MapPin className="w-3 h-3 text-[#C5A059]" />
                         <span>{project.location}</span>
                       </span>
+                      {project.gallery && project.gallery.length > 1 && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-pink-600/90 text-white shadow-xs backdrop-blur-xs">
+                          <Layers className="w-2.5 h-2.5 text-pink-200" />
+                          <span>{project.gallery.length}</span>
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

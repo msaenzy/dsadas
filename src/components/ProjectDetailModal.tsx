@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import { CaseProject } from '../data/projectsData';
 import { ThemeMode } from '../types';
+import AmazonStyleGalleryViewer from './AmazonStyleGalleryViewer';
+import { Instagram } from 'lucide-react';
 
 interface ProjectDetailModalProps {
   project: CaseProject | null;
@@ -142,53 +144,16 @@ export default function ProjectDetailModal({
               </p>
             </div>
 
-            {/* Browser Preview Frame with High-Res Image */}
-            <div
-              className={`rounded-2xl border overflow-hidden shadow-lg ${
-                isLight ? 'bg-[#F2F5F9] border-[#4A6A8C]/20' : 'bg-slate-900 border-slate-800'
-              }`}
-            >
-              {/* Browser Header Bar */}
-              <div
-                className={`px-4 py-2.5 border-b flex items-center justify-between text-xs font-mono ${
-                  isLight ? 'bg-slate-200/80 border-slate-300' : 'bg-slate-950 border-slate-800'
-                }`}
-              >
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                </div>
-                <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-900/90 px-3 py-1 rounded-md text-[11px] font-bold border border-slate-300 dark:border-slate-700">
-                  <Smartphone className="w-3 h-3 text-[#4A6A8C]" />
-                  <span>https://{project.url}</span>
-                </div>
-                <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold hidden sm:inline">
-                  ● Sitio Activo
-                </span>
-              </div>
-
-              {/* Website Preview Image */}
-              <div className="relative group aspect-video sm:aspect-[16/9] overflow-hidden bg-slate-950">
-                <img
-                  src={project.image}
-                  alt={`Vista previa de ${project.title}`}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 flex items-end p-4 sm:p-6">
-                  <div className="text-white space-y-1">
-                    <p className="text-xs font-mono uppercase tracking-wider text-[#C5A059] font-bold">
-                      Vista previa del diseño entregado
-                    </p>
-                    <p className="text-sm sm:text-base font-bold line-clamp-2 text-slate-100">
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Interactive Amazon-Style Multi-Image Gallery Viewer */}
+            <AmazonStyleGalleryViewer
+              gallery={project.gallery}
+              fallbackImage={project.image}
+              projectTitle={project.title}
+              projectDescription={project.description}
+              projectUrl={project.url}
+              theme={theme}
+              instagramHandle={project.instagram}
+            />
 
             {/* Impact Metrics Grid */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
@@ -362,14 +327,27 @@ export default function ProjectDetailModal({
               </span>
             </div>
 
-            <button
-              onClick={handleContactClick}
-              className="cta-shimmer w-full sm:w-auto px-7 py-3 rounded-full font-bold text-xs bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-md flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"
-            >
-              <Sparkles className="w-4 h-4 text-[#C5A059]" />
-              <span>Quiero una Landing Page como esta</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+              {project.instagram && (
+                <a
+                  href={`https://ig.me/m/${project.instagram}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-5 py-3 rounded-full font-bold text-xs bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white shadow-md flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>Ver en Instagram @{project.instagram}</span>
+                </a>
+              )}
+              <button
+                onClick={handleContactClick}
+                className="cta-shimmer w-full sm:w-auto px-7 py-3 rounded-full font-bold text-xs bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-md flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"
+              >
+                <Sparkles className="w-4 h-4 text-[#C5A059]" />
+                <span>Quiero una Landing Page como esta</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

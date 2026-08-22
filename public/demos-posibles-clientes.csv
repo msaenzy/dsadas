@@ -1,10 +1,10 @@
-id,nombre_cliente,tipo_negocio
-dental_01,Dental Spa & Ortodoncia Guayaquil,dental
-dental_02,Dra. Andrea Morales - Estética Dental,dental
-diseno_01,Studio Pixel & Brand Arquitectura y Diseño,diseniador
-diseno_02,Valentina Arteaga - Brand Design Studio,diseniador
-medico_01,Dr. Carlos Mendoza - Pediatría Integral,medico
-restaurante_01,La Casona Gourmet Guayaquil,restaurante
-profesional_01,Viteri & Asociados Consultores Legales,profesional
-demo_dental,Odontología Avanzada Ecuador,dental
-demo_diseno,Studio Creativo & Branding Visual,diseniador
+id,nombre_cliente,tipo_negocio,ciudad,direccion,telefono,email,instagram,facebook,horario
+dental_01,Dental Spa & Ortodoncia Guayaquil,dental,Guayaquil,Av. Francisco de Orellana & Justino Cornejo Torre Médica piso 4,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 08:30 a 19:00 | Sábados 09:00 a 14:00
+dental_02,Dra. Andrea Morales - Estética Dental,dental,Quito,Av. Amazonas y República Edificio Meditrópoli consultorio 302,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 09:00 a 18:30 | Sábados 09:00 a 13:00
+diseno_01,Studio Pixel & Brand Arquitectura y Diseño,diseniador,Guayaquil,Samborondón Business Park km 2.5,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 09:00 a 18:00
+diseno_02,Valentina Arteaga - Brand Design Studio,diseniador,Quito,Cumbayá Plaza Central,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 09:00 a 18:00
+medico_01,Dr. Carlos Mendoza - Pediatría Integral,medico,Guayaquil,Omni Hospital Torre Médica 2,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Sábados previa cita
+restaurante_01,La Casona Gourmet Guayaquil,restaurante,Guayaquil,Urdesa Central Av. Víctor Emilio Estrada,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Martes a Domingo 12:00 a 23:00
+profesional_01,Viteri & Asociados Consultores Legales,profesional,Quito,Av. 12 de Octubre y Lincoln Edificio Boreal,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 08:30 a 17:30
+demo_dental,Odontología Avanzada Ecuador,dental,Guayaquil,Av. Francisco de Orellana & Justino Cornejo Torre Médica,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 08:30 a 19:00 | Sábados 09:00 a 14:00
+demo_diseno,Studio Creativo & Branding Visual,diseniador,Guayaquil,Samborondón Business Park,+593 95 887 6957,contacto@spondylussoluciones.com,https://instagram.com/spondylussoluciones,https://facebook.com/spondylussoluciones,Lunes a Viernes 09:00 a 18:00
