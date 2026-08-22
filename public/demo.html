@@ -275,10 +275,13 @@
       <nav id="dental-navbar" class="sticky top-0 z-40 bg-[#FFFFFF] border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
           
-          <!-- Logo Tipográfico: [NOMBRE DE LA CLÍNICA] en Cairo bold, #0862B5 con diente lineal -->
+          <!-- Logo Tipográfico: [NOMBRE DE LA CLÍNICA] en Cairo bold, #0862B5 con diente lineal SVG -->
           <a href="#hero" class="flex items-center gap-2.5 group cursor-pointer">
-            <div class="w-9 h-9 rounded-full border-1.5 border-[#0862B5] flex items-center justify-center text-[#0862B5] bg-blue-50/50">
-              <i data-lucide="smile" class="w-5 h-5"></i>
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-[#0862B5]/30 flex items-center justify-center text-[#0862B5] bg-blue-50/70 shadow-xs group-hover:scale-105 transition-transform shrink-0">
+              <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C8.5 2 6 4.3 6 7.8c0 3.2 1.3 6.1 2.3 9 .6 1.8 1.1 3.5 1.5 4.4.3.7.8 1 1.4.6.6-.4 1.1-1.8 1.4-3.8.2-1.3.6-1.3.8-1.3s.6 0 .8 1.3c.3 2 .8 3.4 1.4 3.8.6.4 1.1.1 1.4-.6.4-.9.9-2.6 1.5-4.4 1-2.9 2.3-5.8 2.3-9C20 4.3 17.5 2 12 2z"/>
+                <path d="M9 7.5c1-1 2-1.5 3-1.5s2 .5 3 1.5"/>
+              </svg>
             </div>
             <span class="font-cairo font-extrabold text-xl sm:text-2xl text-[#0862B5] tracking-tight leading-none var-clinica-nombre">
               Odontología Avanzada Ecuador
@@ -312,8 +315,13 @@
         <!-- Mobile Menu Overlay a Pantalla Completa -->
         <div id="dental-mobile-menu" class="fixed inset-0 z-50 bg-white/98 backdrop-blur-lg flex flex-col justify-between p-6 hidden">
           <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-            <div class="flex items-center gap-2 text-[#0862B5] font-bold text-lg">
-              <i data-lucide="smile" class="w-5 h-5"></i>
+            <div class="flex items-center gap-2.5 text-[#0862B5] font-bold text-lg">
+              <div class="w-8 h-8 rounded-lg border border-[#0862B5]/30 flex items-center justify-center text-[#0862B5] bg-blue-50">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2C8.5 2 6 4.3 6 7.8c0 3.2 1.3 6.1 2.3 9 .6 1.8 1.1 3.5 1.5 4.4.3.7.8 1 1.4.6.6-.4 1.1-1.8 1.4-3.8.2-1.3.6-1.3.8-1.3s.6 0 .8 1.3c.3 2 .8 3.4 1.4 3.8.6.4 1.1.1 1.4-.6.4-.9.9-2.6 1.5-4.4 1-2.9 2.3-5.8 2.3-9C20 4.3 17.5 2 12 2z"/>
+                  <path d="M9 7.5c1-1 2-1.5 3-1.5s2 .5 3 1.5"/>
+                </svg>
+              </div>
               <span class="var-clinica-nombre">Odontología Avanzada Ecuador</span>
             </div>
             <button id="dental-close-menu-btn" aria-label="Cerrar menú" class="p-2 rounded-full bg-[#F3F6FA] text-[#2B2B2B]">
@@ -429,78 +437,434 @@
           </span>
         </div>
 
-        <!-- Loop Continuo de Tratamientos Destacados -->
+        <!-- Loop Continuo de los 16 Tratamientos con Íconos SVG Propios a Medida -->
         <div class="infinite-scroll-container overflow-hidden py-3" tabindex="0" aria-label="Carrusel de tratamientos destacados">
-          <div class="infinite-scroll-track gap-6 px-4">
+          <div class="infinite-scroll-track gap-5 px-4">
             
-            <!-- Items Exactos: Implantes, Ortodoncia, Blanqueamiento, Carillas, Endodoncia, Prótesis, Odontopediatría, Estética Dental -->
-            <!-- Set 1 -->
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="shield" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Implantes</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="smile" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Ortodoncia</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="sparkles" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Blanqueamiento</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Carillas</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="activity" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Endodoncia</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="disc" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Prótesis</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="heart" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Odontopediatría</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="sun" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Estética Dental</span>
+            <!-- Set 1 (16 Tratamientos) -->
+            <!-- 1. Implantes -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4C11.5 4 8 6.8 8 11.2c0 3.2 1.2 5.8 2.6 8.8h10.8c1.4-3 2.6-5.6 2.6-8.8C24 6.8 20.5 4 16 4z" />
+                  <path d="M12.5 10c1-1 2.3-1.5 3.5-1.5s2.5.5 3.5 1.5" />
+                  <path d="M16 17v11M13 20h6M13.5 23h5M14 26h4M15 28.5h2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Implantes</span>
             </div>
 
-            <!-- Set 2 (para loop infinito fluido) -->
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="shield" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Implantes</span>
+            <!-- 2. Blanqueamiento -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12 7 9 9.5 9 13.5c0 3.5 1.5 6.8 2.5 9.8.7 2 1.3 4 1.8 5 .4.8 1 1.1 1.6.6.7-.5 1.3-2 1.6-4.4.2-1.3.4-1.5.5-1.5s.3.2.5 1.5c.3 2.4.9 3.9 1.6 4.4.6.5 1.2.2 1.6-.6.5-1 1.1-3 1.8-5 1-3 2.5-6.3 2.5-9.8C23 9.5 20 7 16 7z" />
+                  <path d="M23 4v4M21 6h4" />
+                  <path d="M8 5v3M6.5 6.5h3" />
+                  <path d="M16 1.5v2.5M14.7 2.7h2.6" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Blanqueamiento</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="smile" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Ortodoncia</span>
+
+            <!-- 3. Ortodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 5C11.5 5 8 7.8 8 12.2c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C24 7.8 20.5 5 16 5z" />
+                  <path d="M5 14.5h22" />
+                  <rect x="13.5" y="12.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M16 12.5v4" />
+                  <rect x="6.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <rect x="22.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Ortodoncia</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="sparkles" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Blanqueamiento</span>
+
+            <!-- 4. Ortodoncia Invisible -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12.5 7 9.5 9.2 9.5 12.8c0 3.2 1.3 6 2.2 8.8.5 1.5 1 3.2 1.4 4 .3.7.8.9 1.3.5.6-.4 1.1-1.7 1.4-3.8.2-1.1.4-1.3.6-1.3s.4.2.6 1.3c.3 2.1.8 3.4 1.4 3.8.5.4 1 .2 1.3-.5.4-.8.9-2.5 1.4-4 .9-2.8 2.2-5.6 2.2-8.8C22.5 9.2 19.5 7 16 7z" opacity="0.6" />
+                  <path d="M16 4C10.8 4 6.8 7 6.8 12c0 4.2 1.6 8 2.8 11.5 1.2 3.5 3 4.5 4.4 4.5h4c1.4 0 3.2-1 4.4-4.5 1.2-3.5 2.8-7.3 2.8-11.5 0-5-4-8-9.2-8z" stroke-dasharray="2.5 2.5" />
+                  <path d="M11 18.5c3 1.5 7 1.5 10 0" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Ortodoncia Invisible</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Carillas</span>
+
+            <!-- 5. Odontopediatría -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11 6 7.5 9 7.5 13.5c0 3.5 1.2 6.5 2.2 9.2.5 1.5 1 3 1.5 3.8.4.7 1 .8 1.5.4.6-.4 1.1-1.6 1.4-3.5.2-1 .4-1.2.6-1.2s.4.2.6 1.2c.3 1.9.8 3.1 1.4 3.5.5.4 1.1.3 1.5-.4.5-.8 1-2.3 1.5-3.8 1-2.7 2.2-5.7 2.2-9.2C24.5 9 21 6 16 6z" />
+                  <circle cx="12.5" cy="13" r="1" fill="currentColor" />
+                  <circle cx="19.5" cy="13" r="1" fill="currentColor" />
+                  <path d="M12.5 16.5c1 1.8 6 1.8 7 0" />
+                  <path d="M23 6.5c-.8-.8-2 0-2 .8 0 .8 1.2 1.6 2 2.2.8-.6 2-1.4 2-2.2 0-.8-1.2-1.6-2-.8z" stroke-width="1.4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Odontopediatría</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="activity" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Endodoncia</span>
+
+            <!-- 6. Carga Inmediata -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 5C10 5 7 7.5 7 11.5c0 3 1 5.5 2.2 8.5h8.6c1.2-3 2.2-5.5 2.2-8.5C20 7.5 17 5 14 5z" />
+                  <path d="M13.5 17.5v9.5M11 20.5h5M11.5 23.5h4M12 26h3" />
+                  <path d="M25 6l-4.5 7h4l-3.5 9 7.5-9.5h-4.5l3-6.5z" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Carga Inmediata</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="disc" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Prótesis</span>
+
+            <!-- 7. Carillas -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S9 24.5 9 23V7z" />
+                  <path d="M16.5 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S16.5 24.5 16.5 23V7z" />
+                  <path d="M6.5 9c2.5-1.5 5.5-2 9.5-2s7 0.5 9.5 2" />
+                  <path d="M6.5 9.5c0 6 .8 11.5 2.5 14.5" />
+                  <path d="M24 11v3M22.5 12.5h3" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Carillas</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="heart" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Odontopediatría</span>
+
+            <!-- 8. Cirugía Maxilofacial -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9c0 5 1.5 11 5 14.5 3.5 3.5 8.5 3.5 12 0l3-3c.8-.8 1.2-2 .8-3L25 13c-.5-1.5-2-2.5-3.5-2.5h-4" />
+                  <path d="M10 12c1.5-1 4-1 6 0M10 15c1.5-1 4-1 6 0" />
+                  <rect x="19" y="4" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M23 6v4M21 8h4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Cirugía Maxilofacial</span>
             </div>
-            <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-slate-200 shadow-xs shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#0862B5] text-[#0862B5] flex items-center justify-center"><i data-lucide="sun" class="w-4 h-4"></i></div>
-              <span class="text-sm font-bold text-[#2B2B2B]">Estética Dental</span>
+
+            <!-- 9. Coronas Dentales -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 15c.6 2.5 1.3 5 1.7 6.2.4.9 1 1.2 1.6.6.7-.5 1.3-2 1.6-4.5.2-1.2.4-1.3.6-1.3s.4.1.6 1.3c.3 2.5.9 4 1.6 4.5.6.6 1.2.3 1.6-.6.4-1.2 1.1-3.7 1.7-6.2" />
+                  <path d="M8 15C8 9.5 11.5 5 16 5s8 4.5 8 10H8z" />
+                  <path d="M6.5 15h19" />
+                  <path d="M12 9l2 2 2-2 2 2 2-2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Coronas Dentales</span>
             </div>
+
+            <!-- 10. Extracciones -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 11C12.5 11 10 13 10 16c0 2.8 1.1 5.2 1.9 7.8.4 1.3.8 2.8 1.2 3.5.3.6.8.8 1.2.4.5-.4.9-1.5 1.2-3.2.2-.9.3-1 .5-1s.3.1.5 1c.3 1.7.7 2.8 1.2 3.2.4.4.9.2 1.2-.4.4-.7.8-2.2 1.2-3.5.8-2.6 1.9-5 1.9-7.8 0-3-2.5-5-6-5z" />
+                  <path d="M9 3c1 4 3.5 7 5.5 8M23 3c-1 4-3.5 7-5.5 8" />
+                  <circle cx="16" cy="5" r="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M4 14l2-2 2 2M6 12v6" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Extracciones</span>
+            </div>
+
+            <!-- 11. Estética y Restauradora -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4v23" stroke-dasharray="2 2" />
+                  <path d="M16 4.5c-3.5 0-6.5 2-7.5 5.5l2 1.5-2 2 1.5 2-2 2 1.5 2-1 2.5c.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5" />
+                  <path d="M16 4.5c4.5 0 8 2.8 8 7.2 0 3.8-1.5 7.2-2.6 10.5-.6 1.8-1.2 3.8-1.6 4.8-.4.8-1 1-1.6.5-.7-.5-1.3-2-1.6-4.5-.2-1.3-.4-1.5-.6-1.5" />
+                  <path d="M21 9v3M19.5 10.5h3" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Estética & Restauradora</span>
+            </div>
+
+            <!-- 12. Limpieza Dental -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 8C11 8 8 10.5 8 14.5c0 3.5 1.3 6.8 2.3 9.8.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1-3 2.3-6.3 2.3-9.8C22.8 10.5 19.5 8 15 8z" />
+                  <path d="M26 5l-8 8M23 4l-4 4" />
+                  <path d="M17 11c1-1 3-1 4 0" />
+                  <circle cx="6.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="7" cy="15" r="1" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="24.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Limpieza Dental</span>
+            </div>
+
+            <!-- 13. Placas de Relajación -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13C5 7.5 9.5 4 16 4s11 3.5 11 9c0 2-1 4-2.5 5.5-3.5-2-6.5-2.5-8.5-2.5s-5 .5-8.5 2.5C6 17 5 15 5 13z" />
+                  <path d="M9 10c1.5-1 3.5-1.5 7-1.5s5.5.5 7 1.5" />
+                  <path d="M7 21c2.5 4 5.5 6 9 6s6.5-2 9-6" />
+                  <path d="M12 24h8" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Placas de Relajación</span>
+            </div>
+
+            <!-- 14. Prótesis Dental -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 9c3.5-1.5 7.5-2 11-2s7.5.5 11 2" />
+                  <path d="M5 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12H5z" />
+                  <path d="M13 10c0 3.5.8 7 2 10.5h2c1.2-3.5 2-7 2-10.5h-6z" />
+                  <path d="M19 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12h-8z" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Prótesis Dental</span>
+            </div>
+
+            <!-- 15. Endodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11.5 6 8 8.8 8 13c0 3.5 1.5 7 2.6 10.2.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.2 2.6-6.7 2.6-10.2C24 8.8 20.5 6 16 6z" />
+                  <path d="M16 2.5v18" />
+                  <rect x="14" y="2" width="4" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M14.5 9h3M14.5 12h3M14.5 15h3M15 17.5h2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Endodoncia</span>
+            </div>
+
+            <!-- 16. Periodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 5C11 5 8 7.5 8 11.5c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C23 7.5 19 5 15 5z" />
+                  <path d="M4 17.5c3-2 6.5-2 9.5 0s6.5 2 9.5 0" />
+                  <rect x="21" y="18" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M24.5 19.5v4M22.5 21.5h4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Periodoncia</span>
+            </div>
+
+            <!-- Set 2 (Duplicado para loop horizontal continuo fluido sin saltos) -->
+            <!-- 1. Implantes -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4C11.5 4 8 6.8 8 11.2c0 3.2 1.2 5.8 2.6 8.8h10.8c1.4-3 2.6-5.6 2.6-8.8C24 6.8 20.5 4 16 4z" />
+                  <path d="M12.5 10c1-1 2.3-1.5 3.5-1.5s2.5.5 3.5 1.5" />
+                  <path d="M16 17v11M13 20h6M13.5 23h5M14 26h4M15 28.5h2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Implantes</span>
+            </div>
+
+            <!-- 2. Blanqueamiento -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12 7 9 9.5 9 13.5c0 3.5 1.5 6.8 2.5 9.8.7 2 1.3 4 1.8 5 .4.8 1 1.1 1.6.6.7-.5 1.3-2 1.6-4.4.2-1.3.4-1.5.5-1.5s.3.2.5 1.5c.3 2.4.9 3.9 1.6 4.4.6.5 1.2.2 1.6-.6.5-1 1.1-3 1.8-5 1-3 2.5-6.3 2.5-9.8C23 9.5 20 7 16 7z" />
+                  <path d="M23 4v4M21 6h4" />
+                  <path d="M8 5v3M6.5 6.5h3" />
+                  <path d="M16 1.5v2.5M14.7 2.7h2.6" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Blanqueamiento</span>
+            </div>
+
+            <!-- 3. Ortodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 5C11.5 5 8 7.8 8 12.2c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C24 7.8 20.5 5 16 5z" />
+                  <path d="M5 14.5h22" />
+                  <rect x="13.5" y="12.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M16 12.5v4" />
+                  <rect x="6.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <rect x="22.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Ortodoncia</span>
+            </div>
+
+            <!-- 4. Ortodoncia Invisible -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12.5 7 9.5 9.2 9.5 12.8c0 3.2 1.3 6 2.2 8.8.5 1.5 1 3.2 1.4 4 .3.7.8.9 1.3.5.6-.4 1.1-1.7 1.4-3.8.2-1.1.4-1.3.6-1.3s.4.2.6 1.3c.3 2.1.8 3.4 1.4 3.8.5.4 1 .2 1.3-.5.4-.8.9-2.5 1.4-4 .9-2.8 2.2-5.6 2.2-8.8C22.5 9.2 19.5 7 16 7z" opacity="0.6" />
+                  <path d="M16 4C10.8 4 6.8 7 6.8 12c0 4.2 1.6 8 2.8 11.5 1.2 3.5 3 4.5 4.4 4.5h4c1.4 0 3.2-1 4.4-4.5 1.2-3.5 2.8-7.3 2.8-11.5 0-5-4-8-9.2-8z" stroke-dasharray="2.5 2.5" />
+                  <path d="M11 18.5c3 1.5 7 1.5 10 0" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Ortodoncia Invisible</span>
+            </div>
+
+            <!-- 5. Odontopediatría -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11 6 7.5 9 7.5 13.5c0 3.5 1.2 6.5 2.2 9.2.5 1.5 1 3 1.5 3.8.4.7 1 .8 1.5.4.6-.4 1.1-1.6 1.4-3.5.2-1 .4-1.2.6-1.2s.4.2.6 1.2c.3 1.9.8 3.1 1.4 3.5.5.4 1.1.3 1.5-.4.5-.8 1-2.3 1.5-3.8 1-2.7 2.2-5.7 2.2-9.2C24.5 9 21 6 16 6z" />
+                  <circle cx="12.5" cy="13" r="1" fill="currentColor" />
+                  <circle cx="19.5" cy="13" r="1" fill="currentColor" />
+                  <path d="M12.5 16.5c1 1.8 6 1.8 7 0" />
+                  <path d="M23 6.5c-.8-.8-2 0-2 .8 0 .8 1.2 1.6 2 2.2.8-.6 2-1.4 2-2.2 0-.8-1.2-1.6-2-.8z" stroke-width="1.4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Odontopediatría</span>
+            </div>
+
+            <!-- 6. Carga Inmediata -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 5C10 5 7 7.5 7 11.5c0 3 1 5.5 2.2 8.5h8.6c1.2-3 2.2-5.5 2.2-8.5C20 7.5 17 5 14 5z" />
+                  <path d="M13.5 17.5v9.5M11 20.5h5M11.5 23.5h4M12 26h3" />
+                  <path d="M25 6l-4.5 7h4l-3.5 9 7.5-9.5h-4.5l3-6.5z" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Carga Inmediata</span>
+            </div>
+
+            <!-- 7. Carillas -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S9 24.5 9 23V7z" />
+                  <path d="M16.5 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S16.5 24.5 16.5 23V7z" />
+                  <path d="M6.5 9c2.5-1.5 5.5-2 9.5-2s7 0.5 9.5 2" />
+                  <path d="M6.5 9.5c0 6 .8 11.5 2.5 14.5" />
+                  <path d="M24 11v3M22.5 12.5h3" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Carillas</span>
+            </div>
+
+            <!-- 8. Cirugía Maxilofacial -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9c0 5 1.5 11 5 14.5 3.5 3.5 8.5 3.5 12 0l3-3c.8-.8 1.2-2 .8-3L25 13c-.5-1.5-2-2.5-3.5-2.5h-4" />
+                  <path d="M10 12c1.5-1 4-1 6 0M10 15c1.5-1 4-1 6 0" />
+                  <rect x="19" y="4" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M23 6v4M21 8h4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Cirugía Maxilofacial</span>
+            </div>
+
+            <!-- 9. Coronas Dentales -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 15c.6 2.5 1.3 5 1.7 6.2.4.9 1 1.2 1.6.6.7-.5 1.3-2 1.6-4.5.2-1.2.4-1.3.6-1.3s.4.1.6 1.3c.3 2.5.9 4 1.6 4.5.6.6 1.2.3 1.6-.6.4-1.2 1.1-3.7 1.7-6.2" />
+                  <path d="M8 15C8 9.5 11.5 5 16 5s8 4.5 8 10H8z" />
+                  <path d="M6.5 15h19" />
+                  <path d="M12 9l2 2 2-2 2 2 2-2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Coronas Dentales</span>
+            </div>
+
+            <!-- 10. Extracciones -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 11C12.5 11 10 13 10 16c0 2.8 1.1 5.2 1.9 7.8.4 1.3.8 2.8 1.2 3.5.3.6.8.8 1.2.4.5-.4.9-1.5 1.2-3.2.2-.9.3-1 .5-1s.3.1.5 1c.3 1.7.7 2.8 1.2 3.2.4.4.9.2 1.2-.4.4-.7.8-2.2 1.2-3.5.8-2.6 1.9-5 1.9-7.8 0-3-2.5-5-6-5z" />
+                  <path d="M9 3c1 4 3.5 7 5.5 8M23 3c-1 4-3.5 7-5.5 8" />
+                  <circle cx="16" cy="5" r="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M4 14l2-2 2 2M6 12v6" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Extracciones</span>
+            </div>
+
+            <!-- 11. Estética y Restauradora -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4v23" stroke-dasharray="2 2" />
+                  <path d="M16 4.5c-3.5 0-6.5 2-7.5 5.5l2 1.5-2 2 1.5 2-2 2 1.5 2-1 2.5c.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5" />
+                  <path d="M16 4.5c4.5 0 8 2.8 8 7.2 0 3.8-1.5 7.2-2.6 10.5-.6 1.8-1.2 3.8-1.6 4.8-.4.8-1 1-1.6.5-.7-.5-1.3-2-1.6-4.5-.2-1.3-.4-1.5-.6-1.5" />
+                  <path d="M21 9v3M19.5 10.5h3" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Estética & Restauradora</span>
+            </div>
+
+            <!-- 12. Limpieza Dental -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 8C11 8 8 10.5 8 14.5c0 3.5 1.3 6.8 2.3 9.8.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1-3 2.3-6.3 2.3-9.8C22.8 10.5 19.5 8 15 8z" />
+                  <path d="M26 5l-8 8M23 4l-4 4" />
+                  <path d="M17 11c1-1 3-1 4 0" />
+                  <circle cx="6.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="7" cy="15" r="1" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="24.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Limpieza Dental</span>
+            </div>
+
+            <!-- 13. Placas de Relajación -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13C5 7.5 9.5 4 16 4s11 3.5 11 9c0 2-1 4-2.5 5.5-3.5-2-6.5-2.5-8.5-2.5s-5 .5-8.5 2.5C6 17 5 15 5 13z" />
+                  <path d="M9 10c1.5-1 3.5-1.5 7-1.5s5.5.5 7 1.5" />
+                  <path d="M7 21c2.5 4 5.5 6 9 6s6.5-2 9-6" />
+                  <path d="M12 24h8" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Placas de Relajación</span>
+            </div>
+
+            <!-- 14. Prótesis Dental -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 9c3.5-1.5 7.5-2 11-2s7.5.5 11 2" />
+                  <path d="M5 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12H5z" />
+                  <path d="M13 10c0 3.5.8 7 2 10.5h2c1.2-3.5 2-7 2-10.5h-6z" />
+                  <path d="M19 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12h-8z" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Prótesis Dental</span>
+            </div>
+
+            <!-- 15. Endodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11.5 6 8 8.8 8 13c0 3.5 1.5 7 2.6 10.2.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.2 2.6-6.7 2.6-10.2C24 8.8 20.5 6 16 6z" />
+                  <path d="M16 2.5v18" />
+                  <rect x="14" y="2" width="4" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M14.5 9h3M14.5 12h3M14.5 15h3M15 17.5h2" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Endodoncia</span>
+            </div>
+
+            <!-- 16. Periodoncia -->
+            <div class="flex items-center gap-3 bg-white px-4.5 py-2.5 rounded-full border border-slate-200 shadow-xs shrink-0 hover:border-[#0862B5] transition-colors">
+              <div class="w-8 h-8 rounded-full border border-[#0862B5] text-[#0862B5] bg-blue-50/50 flex items-center justify-center shrink-0">
+                <svg class="w-4.5 h-4.5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 5C11 5 8 7.5 8 11.5c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C23 7.5 19 5 15 5z" />
+                  <path d="M4 17.5c3-2 6.5-2 9.5 0s6.5 2 9.5 0" />
+                  <rect x="21" y="18" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M24.5 19.5v4M22.5 21.5h4" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2B2B2B]">Periodoncia</span>
+            </div>
+
           </div>
         </div>
 
@@ -651,7 +1015,7 @@
       </section>
 
       <!-- =============================================================== -->
-      <!-- 5. TRATAMIENTOS EN DETALLE (Grid 8 Tarjetas Exactas)            -->
+      <!-- 5. TRATAMIENTOS EN DETALLE (Grid de 16 Tratamientos Completos)  -->
       <!-- =============================================================== -->
       <section id="tratamientos" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF]">
         <div class="max-w-7xl mx-auto space-y-12">
@@ -664,22 +1028,26 @@
               Tratamientos Odontológicos en Detalle
             </h2>
             <p class="text-sm text-[#4A6B87]">
-              Soluciones estéticas y funcionales con materiales biocompatibles de la más alta durabilidad.
+              Soluciones estéticas y funcionales de máxima durabilidad con tecnología de vanguardia.
             </p>
           </div>
 
-          <!-- Grid de 8 tarjetas (ícono circular outline + nombre + descripción de 1 línea orientada a beneficio) -->
+          <!-- Grid de 16 tarjetas (ícono circular outline + nombre + descripción de 1 línea orientada a beneficio) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- 1. Implantes Dentales -->
             <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4">
               <div class="treatment-icon-circle">
-                <i data-lucide="shield" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4C11.5 4 8 6.8 8 11.2c0 3.2 1.2 5.8 2.6 8.8h10.8c1.4-3 2.6-5.6 2.6-8.8C24 6.8 20.5 4 16 4z" />
+                  <path d="M12.5 10c1-1 2.3-1.5 3.5-1.5s2.5.5 3.5 1.5" />
+                  <path d="M16 17v11M13 20h6M13.5 23h5M14 26h4M15 28.5h2" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
                 <h3 class="text-lg font-bold text-[#2B2B2B]">Implantes Dentales</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Recuperá piezas perdidas con una solución fija, natural y duradera.
+                  Recuperá piezas perdidas con fijación de titanio que devuelve la fuerza y estética natural de tu mordida.
                 </p>
               </div>
               <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Implantes Dentales">
@@ -688,49 +1056,20 @@
               </a>
             </div>
 
-            <!-- 2. Ortodoncia -->
+            <!-- 2. Blanqueamiento Dental -->
             <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 50ms;">
               <div class="treatment-icon-circle">
-                <i data-lucide="smile" class="w-6 h-6"></i>
-              </div>
-              <div class="space-y-1.5 flex-1">
-                <h3 class="text-lg font-bold text-[#2B2B2B]">Ortodoncia</h3>
-                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Alineá tu sonrisa con brackets tradicionales adaptados a tu tratamiento.
-                </p>
-              </div>
-              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Ortodoncia">
-                <span>Consultar por WhatsApp</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-
-            <!-- 3. Ortodoncia Invisible -->
-            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 100ms;">
-              <div class="treatment-icon-circle">
-                <i data-lucide="sparkle" class="w-6 h-6"></i>
-              </div>
-              <div class="space-y-1.5 flex-1">
-                <h3 class="text-lg font-bold text-[#2B2B2B]">Ortodoncia Invisible</h3>
-                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Corregí tu sonrisa de forma discreta, sin brackets a la vista.
-                </p>
-              </div>
-              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Ortodoncia Invisible">
-                <span>Consultar por WhatsApp</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-
-            <!-- 4. Blanqueamiento Dental -->
-            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 150ms;">
-              <div class="treatment-icon-circle">
-                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12 7 9 9.5 9 13.5c0 3.5 1.5 6.8 2.5 9.8.7 2 1.3 4 1.8 5 .4.8 1 1.1 1.6.6.7-.5 1.3-2 1.6-4.4.2-1.3.4-1.5.5-1.5s.3.2.5 1.5c.3 2.4.9 3.9 1.6 4.4.6.5 1.2.2 1.6-.6.5-1 1.1-3 1.8-5 1-3 2.5-6.3 2.5-9.8C23 9.5 20 7 16 7z" />
+                  <path d="M23 4v4M21 6h4" />
+                  <path d="M8 5v3M6.5 6.5h3" />
+                  <path d="M16 1.5v2.5M14.7 2.7h2.6" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
                 <h3 class="text-lg font-bold text-[#2B2B2B]">Blanqueamiento Dental</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Una sonrisa más luminosa en una sola sesión, con resultados visibles.
+                  Aclará varios tonos en una sola sesión con geles de última generación que protegen tu esmalte.
                 </p>
               </div>
               <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Blanqueamiento Dental">
@@ -739,15 +1078,110 @@
               </a>
             </div>
 
-            <!-- 5. Carillas Dentales -->
+            <!-- 3. Ortodoncia -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 100ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 5C11.5 5 8 7.8 8 12.2c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C24 7.8 20.5 5 16 5z" />
+                  <path d="M5 14.5h22" />
+                  <rect x="13.5" y="12.5" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M16 12.5v4" />
+                  <rect x="6.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <rect x="22.5" y="13" width="3" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Ortodoncia</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Alineá tu mordida y posición dental con brackets de alta precisión adaptados a tu ritmo.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Ortodoncia">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 4. Ortodoncia Invisible -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 150ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 7C12.5 7 9.5 9.2 9.5 12.8c0 3.2 1.3 6 2.2 8.8.5 1.5 1 3.2 1.4 4 .3.7.8.9 1.3.5.6-.4 1.1-1.7 1.4-3.8.2-1.1.4-1.3.6-1.3s.4.2.6 1.3c.3 2.1.8 3.4 1.4 3.8.5.4 1 .2 1.3-.5.4-.8.9-2.5 1.4-4 .9-2.8 2.2-5.6 2.2-8.8C22.5 9.2 19.5 7 16 7z" opacity="0.6" />
+                  <path d="M16 4C10.8 4 6.8 7 6.8 12c0 4.2 1.6 8 2.8 11.5 1.2 3.5 3 4.5 4.4 4.5h4c1.4 0 3.2-1 4.4-4.5 1.2-3.5 2.8-7.3 2.8-11.5 0-5-4-8-9.2-8z" stroke-dasharray="2.5 2.5" />
+                  <path d="M11 18.5c3 1.5 7 1.5 10 0" stroke-dasharray="2 2" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Ortodoncia Invisible</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Corregí la posición de tus dientes con alineadores transparentes y removibles, sin brackets visibles.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Ortodoncia Invisible">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 5. Odontopediatría -->
             <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 200ms;">
               <div class="treatment-icon-circle">
-                <i data-lucide="layers" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11 6 7.5 9 7.5 13.5c0 3.5 1.2 6.5 2.2 9.2.5 1.5 1 3 1.5 3.8.4.7 1 .8 1.5.4.6-.4 1.1-1.6 1.4-3.5.2-1 .4-1.2.6-1.2s.4.2.6 1.2c.3 1.9.8 3.1 1.4 3.5.5.4 1.1.3 1.5-.4.5-.8 1-2.3 1.5-3.8 1-2.7 2.2-5.7 2.2-9.2C24.5 9 21 6 16 6z" />
+                  <circle cx="12.5" cy="13" r="1" fill="currentColor" />
+                  <circle cx="19.5" cy="13" r="1" fill="currentColor" />
+                  <path d="M12.5 16.5c1 1.8 6 1.8 7 0" />
+                  <path d="M23 6.5c-.8-.8-2 0-2 .8 0 .8 1.2 1.6 2 2.2.8-.6 2-1.4 2-2.2 0-.8-1.2-1.6-2-.8z" stroke-width="1.4" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Odontopediatría</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Cuidado preventivo y tratamientos adaptados para que los más chicos crezcan sin miedo al dentista.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Odontopediatría">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 6. Carga Inmediata -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 250ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 5C10 5 7 7.5 7 11.5c0 3 1 5.5 2.2 8.5h8.6c1.2-3 2.2-5.5 2.2-8.5C20 7.5 17 5 14 5z" />
+                  <path d="M13.5 17.5v9.5M11 20.5h5M11.5 23.5h4M12 26h3" />
+                  <path d="M25 6l-4.5 7h4l-3.5 9 7.5-9.5h-4.5l3-6.5z" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Carga Inmediata</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Implante y corona provisional colocados en el mismo día para que no pases tiempo sin tu diente.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Carga Inmediata">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 7. Carillas Dentales -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 300ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S9 24.5 9 23V7z" />
+                  <path d="M16.5 7h6.5v16c0 1.5-1.2 2.5-3.2 2.5S16.5 24.5 16.5 23V7z" />
+                  <path d="M6.5 9c2.5-1.5 5.5-2 9.5-2s7 0.5 9.5 2" />
+                  <path d="M6.5 9.5c0 6 .8 11.5 2.5 14.5" />
+                  <path d="M24 11v3M22.5 12.5h3" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
                 <h3 class="text-lg font-bold text-[#2B2B2B]">Carillas Dentales</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Mejorá forma, color y alineación sin tratamientos invasivos.
+                  Transformá forma, color y armonía dental con finas láminas de porcelana de alta resistencia.
                 </p>
               </div>
               <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Carillas Dentales">
@@ -756,32 +1190,154 @@
               </a>
             </div>
 
-            <!-- 6. Endodoncia -->
-            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 250ms;">
+            <!-- 8. Cirugía Maxilofacial -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 350ms;">
               <div class="treatment-icon-circle">
-                <i data-lucide="activity" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9c0 5 1.5 11 5 14.5 3.5 3.5 8.5 3.5 12 0l3-3c.8-.8 1.2-2 .8-3L25 13c-.5-1.5-2-2.5-3.5-2.5h-4" />
+                  <path d="M10 12c1.5-1 4-1 6 0M10 15c1.5-1 4-1 6 0" />
+                  <rect x="19" y="4" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M23 6v4M21 8h4" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
-                <h3 class="text-lg font-bold text-[#2B2B2B]">Endodoncia (Tratamiento de Conducto)</h3>
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Cirugía Maxilofacial</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Salvá la pieza dañada y eliminá el dolor de raíz.
+                  Procedimientos quirúrgicos especializados para anomalías óseas, articulares y extracciones complejas.
                 </p>
               </div>
-              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Endodoncia">
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Cirugía Maxilofacial">
                 <span>Consultar por WhatsApp</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </a>
             </div>
 
-            <!-- 7. Prótesis Dental -->
+            <!-- 9. Coronas Dentales -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 50ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 15c.6 2.5 1.3 5 1.7 6.2.4.9 1 1.2 1.6.6.7-.5 1.3-2 1.6-4.5.2-1.2.4-1.3.6-1.3s.4.1.6 1.3c.3 2.5.9 4 1.6 4.5.6.6 1.2.3 1.6-.6.4-1.2 1.1-3.7 1.7-6.2" />
+                  <path d="M8 15C8 9.5 11.5 5 16 5s8 4.5 8 10H8z" />
+                  <path d="M6.5 15h19" />
+                  <path d="M12 9l2 2 2-2 2 2 2-2" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Coronas Dentales</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Casquetes de porcelana o zirconio que recubren y devuelven la solidez a dientes muy desgastados.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Coronas Dentales">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 10. Extracciones Dentales -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 100ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 11C12.5 11 10 13 10 16c0 2.8 1.1 5.2 1.9 7.8.4 1.3.8 2.8 1.2 3.5.3.6.8.8 1.2.4.5-.4.9-1.5 1.2-3.2.2-.9.3-1 .5-1s.3.1.5 1c.3 1.7.7 2.8 1.2 3.2.4.4.9.2 1.2-.4.4-.7.8-2.2 1.2-3.5.8-2.6 1.9-5 1.9-7.8 0-3-2.5-5-6-5z" />
+                  <path d="M9 3c1 4 3.5 7 5.5 8M23 3c-1 4-3.5 7-5.5 8" />
+                  <circle cx="16" cy="5" r="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M4 14l2-2 2 2M6 12v6" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Extracciones Dentales</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Extracciones simples y de muelas del juicio con técnicas mínimamente invasivas y anestesia localizada.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Extracciones Dentales">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 11. Estética y Restauradora -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 150ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4v23" stroke-dasharray="2 2" />
+                  <path d="M16 4.5c-3.5 0-6.5 2-7.5 5.5l2 1.5-2 2 1.5 2-2 2 1.5 2-1 2.5c.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5" />
+                  <path d="M16 4.5c4.5 0 8 2.8 8 7.2 0 3.8-1.5 7.2-2.6 10.5-.6 1.8-1.2 3.8-1.6 4.8-.4.8-1 1-1.6.5-.7-.5-1.3-2-1.6-4.5-.2-1.3-.4-1.5-.6-1.5" />
+                  <path d="M21 9v3M19.5 10.5h3" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Estética y Restauradora</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Reconstrucción con resinas estéticas de alta durabilidad para restaurar caries y fracturas invisibles.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Estética y Restauradora">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 12. Limpieza Dental -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 200ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 8C11 8 8 10.5 8 14.5c0 3.5 1.3 6.8 2.3 9.8.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1-3 2.3-6.3 2.3-9.8C22.8 10.5 19.5 8 15 8z" />
+                  <path d="M26 5l-8 8M23 4l-4 4" />
+                  <path d="M17 11c1-1 3-1 4 0" />
+                  <circle cx="6.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="7" cy="15" r="1" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="24.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Limpieza Dental</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Profilaxis y eliminación de sarro ultrasónica para prevenir caries y mantener encías sanas y frescas.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Limpieza Dental">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 13. Placas de Relajación -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 250ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13C5 7.5 9.5 4 16 4s11 3.5 11 9c0 2-1 4-2.5 5.5-3.5-2-6.5-2.5-8.5-2.5s-5 .5-8.5 2.5C6 17 5 15 5 13z" />
+                  <path d="M9 10c1.5-1 3.5-1.5 7-1.5s5.5.5 7 1.5" />
+                  <path d="M7 21c2.5 4 5.5 6 9 6s6.5-2 9-6" />
+                  <path d="M12 24h8" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Placas de Relajación</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Férulas oclusales a medida para aliviar el bruxismo, proteger el esmalte y descansar la mandíbula.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Placas de Relajación">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 14. Prótesis Dental -->
             <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 300ms;">
               <div class="treatment-icon-circle">
-                <i data-lucide="disc" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 9c3.5-1.5 7.5-2 11-2s7.5.5 11 2" />
+                  <path d="M5 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12H5z" />
+                  <path d="M13 10c0 3.5.8 7 2 10.5h2c1.2-3.5 2-7 2-10.5h-6z" />
+                  <path d="M19 10c0 4 1 8 2.5 12h3c1.5-4 2.5-8 2.5-12h-8z" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
                 <h3 class="text-lg font-bold text-[#2B2B2B]">Prótesis Dental</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Recuperá función y estética con prótesis fijas o removibles a medida.
+                  Soluciones fijas o removibles biocompatibles para rehabilitar tramos dentales completos con confort.
                 </p>
               </div>
               <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Prótesis Dental">
@@ -790,18 +1346,45 @@
               </a>
             </div>
 
-            <!-- 8. Odontopediatría -->
+            <!-- 15. Endodoncia -->
             <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 350ms;">
               <div class="treatment-icon-circle">
-                <i data-lucide="heart" class="w-6 h-6"></i>
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 6C11.5 6 8 8.8 8 13c0 3.5 1.5 7 2.6 10.2.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.2 2.6-6.7 2.6-10.2C24 8.8 20.5 6 16 6z" />
+                  <path d="M16 2.5v18" />
+                  <rect x="14" y="2" width="4" height="3" rx="0.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M14.5 9h3M14.5 12h3M14.5 15h3M15 17.5h2" />
+                </svg>
               </div>
               <div class="space-y-1.5 flex-1">
-                <h3 class="text-lg font-bold text-[#2B2B2B]">Odontopediatría</h3>
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Tratamiento de Conducto (Endodoncia)</h3>
                 <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
-                  Cuidado especializado y en confianza para las sonrisas más chicas de la casa.
+                  Eliminá la infección y el dolor preservando tu pieza dental original mediante limpieza radicular digital.
                 </p>
               </div>
-              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Odontopediatría">
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Endodoncia">
+                <span>Consultar por WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- 16. Tratamiento Periodontal -->
+            <div class="reveal-item treatment-card bg-[#F3F6FA] p-7 rounded-3xl border border-slate-200/80 shadow-xs hover:bg-white hover:border-[#0862B5] hover:shadow-md transition-all flex flex-col justify-between space-y-4" style="transition-delay: 400ms;">
+              <div class="treatment-icon-circle">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 5C11 5 8 7.5 8 11.5c0 3.8 1.5 7.2 2.6 10.5.6 1.8 1.2 3.8 1.6 4.8.4.8 1 1 1.6.5.7-.5 1.3-2 1.6-4.5.2-1.3.4-1.5.6-1.5s.4.2.6 1.5c.3 2.5.9 4 1.6 4.5.6.5 1.2.3 1.6-.5.4-1 1-3 1.6-4.8 1.1-3.3 2.6-6.7 2.6-10.5C23 7.5 19 5 15 5z" />
+                  <path d="M4 17.5c3-2 6.5-2 9.5 0s6.5 2 9.5 0" />
+                  <rect x="21" y="18" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8" fill="none" />
+                  <path d="M24.5 19.5v4M22.5 21.5h4" />
+                </svg>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-lg font-bold text-[#2B2B2B]">Tratamiento Periodontal</h3>
+                <p class="text-xs sm:text-sm text-[#4A6B87] leading-relaxed">
+                  Tratamiento y desinfección de encías para frenar el sangrado, la retracción gingival y la movilidad.
+                </p>
+              </div>
+              <a href="#" target="_blank" class="var-wa-treatment inline-flex items-center gap-1.5 text-xs font-bold text-[#0862B5] hover:text-[#064B8C] pt-2 border-t border-slate-200/60" data-treatment="Tratamiento Periodontal">
                 <span>Consultar por WhatsApp</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </a>
