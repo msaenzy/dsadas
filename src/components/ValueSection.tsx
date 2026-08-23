@@ -70,38 +70,37 @@ export default function ValueSection({ theme }: ValueSectionProps) {
   return (
     <section
       id="nosotros"
-      className={`relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t transition-colors duration-300 ${
+      className={`relative py-10 md:py-12 lg:py-8 xl:py-10 lg:min-h-[calc(100vh-4rem)] lg:flex lg:flex-col lg:justify-center px-4 sm:px-6 lg:px-8 border-t transition-colors duration-300 ${
         isLight
           ? 'bg-[#E0E5EC] border-[#4A6A8C]/15 text-[#2D3436]'
           : 'bg-[#070911] border-slate-900 text-slate-300'
       }`}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1.0] }}
+          className="text-center max-w-2xl mx-auto mb-6 lg:mb-7"
         >
           <span
-            className={`font-mono text-xs tracking-widest uppercase font-semibold ${
-              isLight ? 'text-[#4A6A8C]' : 'text-cyan-400'
+            className={`font-mono text-[11px] tracking-widest uppercase font-semibold px-3 py-0.5 rounded-full border ${
+              isLight ? 'bg-white/80 border-[#4A6A8C]/30 text-[#37526E]' : 'bg-slate-900 border-slate-800 text-cyan-300'
             }`}
           >
             Por qué Spondylus
           </span>
           <h2
-            className={`font-display font-extrabold text-3xl md:text-4xl mt-3 tracking-tight ${
+            className={`font-display font-extrabold text-2xl sm:text-3xl lg:text-[2rem] mt-2 tracking-tight ${
               isLight ? 'text-[#2D3436]' : 'text-white'
             }`}
           >
             Razones por las que nuestros clientes nos eligen
           </h2>
-          <p className={`mt-4 text-base leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
-            No vendemos páginas estáticas simples. Construimos herramientas de venta digitales que se
-            sienten ultra rápidas, lucen impecables y responden inmediatamente.
+          <p className={`mt-1.5 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
+            No vendemos páginas estáticas simples. Construimos herramientas de venta digitales ultra rápidas, visualmente atractivas y con conversión directa a WhatsApp.
           </p>
         </motion.div>
 
@@ -111,22 +110,22 @@ export default function ValueSection({ theme }: ValueSectionProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4.5 xl:gap-5"
         >
           {values.map((v) => (
             <motion.div
               key={v.id}
               variants={cardVariants}
-              className={`group relative rounded-2xl p-6 sm:p-7 border flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-md ${
+              className={`group relative rounded-2xl p-4 sm:p-5 lg:p-4.5 xl:p-5 border flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md ${
                 isLight
                   ? 'bg-[#F2F5F9] border-[#4A6A8C]/20 hover:border-[#4A6A8C] hover:bg-white'
                   : 'bg-slate-900/40 border-slate-800 hover:border-cyan-400/40'
               }`}
             >
               <div>
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center justify-between mb-3">
                   <div
-                    className={`w-11 h-11 rounded-xl border flex items-center justify-center transition-transform group-hover:scale-110 ${
+                    className={`w-9 h-9 rounded-xl border flex items-center justify-center transition-transform group-hover:scale-110 ${
                       isLight
                         ? 'bg-white border-[#4A6A8C]/25 shadow-xs'
                         : 'bg-cyan-400/10 border-cyan-400/25'
@@ -135,7 +134,7 @@ export default function ValueSection({ theme }: ValueSectionProps) {
                     {v.icon}
                   </div>
                   <span
-                    className={`font-mono text-[10px] px-2.5 py-0.5 rounded-full border font-semibold ${
+                    className={`font-mono text-[9.5px] px-2 py-0.5 rounded-full border font-semibold ${
                       isLight
                         ? 'bg-white border-[#C5A059]/40 text-[#2D3436] font-bold'
                         : 'bg-slate-800 border-slate-700 text-slate-400'
@@ -146,14 +145,14 @@ export default function ValueSection({ theme }: ValueSectionProps) {
                 </div>
 
                 <h3
-                  className={`font-display font-bold text-lg mb-2.5 ${
+                  className={`font-display font-bold text-base mb-1.5 leading-snug ${
                     isLight ? 'text-[#2D3436]' : 'text-white'
                   }`}
                 >
                   {v.title}
                 </h3>
 
-                <p className={`text-xs sm:text-sm leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
+                <p className={`text-xs leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
                   {v.desc}
                 </p>
               </div>

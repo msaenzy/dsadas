@@ -39,82 +39,81 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
   return (
     <section
       id="contacto"
-      className={`relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t transition-colors duration-300 ${
+      className={`relative py-10 md:py-12 lg:py-8 xl:py-10 lg:min-h-[calc(100vh-4rem)] lg:flex lg:flex-col lg:justify-center px-4 sm:px-6 lg:px-8 border-t transition-colors duration-300 ${
         isLight
           ? 'bg-[#E0E5EC] border-[#4A6A8C]/15 text-[#2D3436] shell-ridges-light'
           : 'bg-[#070911] border-slate-900 text-slate-300 shell-ridges-dark'
       }`}
     >
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-center w-full">
         {/* Left Info Column */}
         <motion.div
-          initial={{ opacity: 0, x: -35 }}
+          initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
         >
           <span
-            className={`font-mono text-xs tracking-widest uppercase font-semibold ${
-              isLight ? 'text-[#4A6A8C]' : 'text-cyan-400'
+            className={`font-mono text-[11px] tracking-widest uppercase font-semibold px-3 py-0.5 rounded-full border ${
+              isLight ? 'bg-white/80 border-[#4A6A8C]/30 text-[#37526E]' : 'bg-slate-900 border-slate-800 text-cyan-300'
             }`}
           >
             Hablemos Directamente
           </span>
           <h2
-            className={`font-display font-extrabold text-3xl md:text-4xl mt-3 mb-5 tracking-tight ${
+            className={`font-display font-extrabold text-2xl sm:text-3xl lg:text-[2rem] mt-2 mb-2 tracking-tight ${
               isLight ? 'text-[#2D3436]' : 'text-white'
             }`}
           >
             Cuéntanos sobre tu proyecto
           </h2>
-          <p className={`mb-10 max-w-md leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
-            Completa el formulario y te contactamos a la brevedad posible con una propuesta
-            clara, estructurada y sin compromiso.
+          <p className={`mb-5 max-w-md text-xs sm:text-sm leading-relaxed ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
+            Completa el formulario y te contactamos a la brevedad posible con una propuesta clara y sin compromiso.
           </p>
 
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
+          <div className="space-y-3.5">
+            <div className="flex items-center gap-3">
               <div
-                className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 ${
                   isLight
                     ? 'bg-white border-[#4A6A8C]/25 text-[#4A6A8C]'
                     : 'bg-cyan-400/10 border-cyan-400/25 text-cyan-400'
                 }`}
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4" />
               </div>
               <div>
-                <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+                <p className={`text-xs font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
                   Correo Electrónico
                 </p>
                 <a
                   href="mailto:contacto@spondylussolucionesdigitales.com"
-                  className={`text-sm hover:underline ${isLight ? 'text-[#4A6A8C] font-semibold' : 'text-cyan-400'}`}
+                  className={`text-xs hover:underline ${isLight ? 'text-[#4A6A8C] font-semibold' : 'text-cyan-400'}`}
                 >
                   contacto@spondylussolucionesdigitales.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-3">
               <div
-                className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 ${
                   isLight
                     ? 'bg-white border-[#C5A059]/40 text-[#C5A059]'
                     : 'bg-amber-300/10 border-amber-300/25 text-amber-300'
                 }`}
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4" />
               </div>
               <div>
-                <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+                <p className={`text-xs font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
                   Celular / WhatsApp
                 </p>
                 <a
                   href="https://wa.me/593958876957"
                   target="_blank"
                   rel="noreferrer"
-                  className={`text-sm hover:underline font-mono ${
+                  className={`text-xs hover:underline font-mono ${
                     isLight ? 'text-[#4A6A8C] font-bold' : 'text-cyan-400 font-semibold'
                   }`}
                 >
@@ -123,25 +122,25 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-3">
               <div
-                className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 ${
                   isLight
                     ? 'bg-white border-pink-400/30 text-pink-600'
                     : 'bg-pink-500/10 border-pink-500/30 text-pink-400'
                 }`}
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </div>
               <div>
-                <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+                <p className={`text-xs font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
                   Instagram Oficial
                 </p>
                 <a
                   href="https://www.instagram.com/spondylussoluciones/"
                   target="_blank"
                   rel="noreferrer"
-                  className={`text-sm hover:underline ${
+                  className={`text-xs hover:underline ${
                     isLight ? 'text-pink-700 font-bold' : 'text-pink-400 font-semibold'
                   }`}
                 >
@@ -150,21 +149,21 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-3">
               <div
-                className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${
+                className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 ${
                   isLight
                     ? 'bg-white border-[#4A6A8C]/25 text-[#4A6A8C]'
                     : 'bg-cyan-400/10 border-cyan-400/25 text-cyan-400'
                 }`}
               >
-                <MapPin className="w-5 h-5" />
+                <MapPin className="w-4 h-4" />
               </div>
               <div>
-                <p className={`text-sm font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
+                <p className={`text-xs font-semibold ${isLight ? 'text-[#2D3436]' : 'text-white'}`}>
                   Ubicación Principal
                 </p>
-                <p className={`text-sm ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
+                <p className={`text-xs ${isLight ? 'text-[#2D3436]/80' : 'text-slate-400'}`}>
                   Guayaquil, Ecuador · Cobertura y atención nacional
                 </p>
               </div>
@@ -174,136 +173,140 @@ export default function ContactSection({ theme, selectedPlanTitle }: ContactSect
 
         {/* Right Form Card */}
         <motion.form
-          initial={{ opacity: 0, x: 35 }}
+          initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
           onSubmit={handleSubmit}
-          className={`rounded-2xl p-7 sm:p-9 border space-y-5 shadow-lg ${
+          className={`rounded-2xl p-4 sm:p-5 lg:p-5 border space-y-3 shadow-md ${
             isLight
               ? 'bg-[#F2F5F9] border-[#4A6A8C]/25 shadow-[#4A6A8C]/10'
               : 'bg-slate-900/50 border-slate-800'
           }`}
         >
-          <div>
-            <label
-              className={`block text-xs font-mono uppercase font-semibold tracking-wider mb-2 ${
-                isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
-              }`}
-            >
-              Nombre Completo *
-            </label>
-            <input
-              type="text"
-              required
-              placeholder="Ej. Ana Torres"
-              value={formData.nombre}
-              onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-              className={`w-full rounded-xl border px-4 py-3 text-sm transition-all ${
-                isLight
-                  ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
-                  : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
-              }`}
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label
+                className={`block text-[11px] font-mono uppercase font-semibold tracking-wider mb-1 ${
+                  isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
+                }`}
+              >
+                Nombre Completo *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Ej. Ana Torres"
+                value={formData.nombre}
+                onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                className={`w-full rounded-xl border px-3 py-2 text-xs transition-all ${
+                  isLight
+                    ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
+                    : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
+                }`}
+              />
+            </div>
+
+            <div>
+              <label
+                className={`block text-[11px] font-mono uppercase font-semibold tracking-wider mb-1 ${
+                  isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
+                }`}
+              >
+                Empresa / Negocio *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Ej. Clínica Vitalia"
+                value={formData.empresa}
+                onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+                className={`w-full rounded-xl border px-3 py-2 text-xs transition-all ${
+                  isLight
+                    ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
+                    : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
+                }`}
+              />
+            </div>
           </div>
 
-          <div>
-            <label
-              className={`block text-xs font-mono uppercase font-semibold tracking-wider mb-2 ${
-                isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
-              }`}
-            >
-              Empresa / Clínica / Negocio *
-            </label>
-            <input
-              type="text"
-              required
-              placeholder="Ej. Clínica Vitalia"
-              value={formData.empresa}
-              onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-              className={`w-full rounded-xl border px-4 py-3 text-sm transition-all ${
-                isLight
-                  ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
-                  : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
-              }`}
-            />
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label
+                className={`block text-[11px] font-mono uppercase font-semibold tracking-wider mb-1 ${
+                  isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
+                }`}
+              >
+                Teléfono / WhatsApp *
+              </label>
+              <input
+                type="tel"
+                required
+                placeholder="+593 9XX XXX XXX"
+                value={formData.telefono}
+                onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                className={`w-full rounded-xl border px-3 py-2 text-xs transition-all ${
+                  isLight
+                    ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
+                    : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
+                }`}
+              />
+            </div>
 
-          <div>
-            <label
-              className={`block text-xs font-mono uppercase font-semibold tracking-wider mb-2 ${
-                isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
-              }`}
-            >
-              Teléfono / WhatsApp *
-            </label>
-            <input
-              type="tel"
-              required
-              placeholder="+593 9XX XXX XXX"
-              value={formData.telefono}
-              onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-              className={`w-full rounded-xl border px-4 py-3 text-sm transition-all ${
-                isLight
-                  ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] placeholder:text-[#2D3436]/40 focus:border-[#4A6A8C] focus:ring-2 focus:ring-[#4A6A8C]/20'
-                  : 'bg-[#0a0c14] border-slate-800 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
-              }`}
-            />
-          </div>
-
-          <div>
-            <label
-              className={`block text-xs font-mono uppercase font-semibold tracking-wider mb-2 ${
-                isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
-              }`}
-            >
-              Servicio de Interés *
-            </label>
-            <select
-              required
-              value={formData.servicio}
-              onChange={(e) => setFormData({ ...formData, servicio: e.target.value })}
-              className={`w-full rounded-xl border px-4 py-3 text-sm transition-all ${
-                isLight
-                  ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] focus:border-[#4A6A8C]'
-                  : 'bg-[#0a0c14] border-slate-800 text-white focus:border-cyan-400'
-              }`}
-            >
-              <option value="" disabled>
-                Selecciona una opción
-              </option>
-              <option value="Landing Page Esencial">Landing Page Esencial</option>
-              <option value="Landing Page Corporativa Pro">Landing Page Corporativa Pro</option>
-              <option value="Landing Page Multi-Sección">Landing Page Multi-Sección</option>
-              <option value="Asesoría de Presencia Digital">Asesoría de Presencia Digital</option>
-            </select>
+            <div>
+              <label
+                className={`block text-[11px] font-mono uppercase font-semibold tracking-wider mb-1 ${
+                  isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
+                }`}
+              >
+                Servicio de Interés *
+              </label>
+              <select
+                required
+                value={formData.servicio}
+                onChange={(e) => setFormData({ ...formData, servicio: e.target.value })}
+                className={`w-full rounded-xl border px-3 py-2 text-xs transition-all ${
+                  isLight
+                    ? 'bg-white border-[#4A6A8C]/30 text-[#2D3436] focus:border-[#4A6A8C]'
+                    : 'bg-[#0a0c14] border-slate-800 text-white focus:border-cyan-400'
+                }`}
+              >
+                <option value="" disabled>
+                  Selecciona una opción
+                </option>
+                <option value="Landing Page One-Page (Sin Dominio)">Landing Page One-Page (Sin Dominio)</option>
+                <option value="Landing Corporativa Pro (Con Dominio .COM)">Landing Corporativa Pro (Con Dominio .COM)</option>
+                <option value="Sitio Web Corporativo Completo (Multi-Página + Correo Receptor)">Sitio Web Corporativo Completo (Multi-Página + Correo Receptor)</option>
+                <option value="Asesoría de Presencia Digital">Asesoría de Presencia Digital</option>
+              </select>
+            </div>
           </div>
 
           <button
             type="submit"
-            className={`cta-shimmer w-full font-bold text-sm px-6 py-3.5 rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
+            className={`cta-shimmer w-full font-bold text-xs py-2.5 px-4 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs ${
               isLight
                 ? 'bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-[#4A6A8C]/20'
                 : 'bg-cyan-400 hover:bg-amber-300 text-slate-950 shadow-cyan-400/20'
             }`}
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-3.5 h-3.5" />
             Enviar solicitud
           </button>
 
           {submitted && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`p-4 rounded-xl border flex items-center gap-3 ${
+              className={`p-2.5 rounded-xl border flex items-center gap-2 ${
                 isLight
                   ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
                   : 'bg-emerald-950/40 border-emerald-800 text-emerald-300'
               }`}
             >
-              <CheckCircle2 className="w-5 h-5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 shrink-0" />
               <p className="text-xs font-medium">
-                ¡Gracias! Tu solicitud ha sido enviada con éxito. Te contactaremos en breve por WhatsApp o teléfono.
+                ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos en breve por WhatsApp.
               </p>
             </motion.div>
           )}

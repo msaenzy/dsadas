@@ -242,9 +242,9 @@ export default function ContactoPage({ theme, selectedPlanTitle }: ContactoPageP
                       : 'bg-[#0a0c14] border-slate-800 text-white focus:border-cyan-400'
                   }`}
                 >
-                  <option value="Landing Page Esencial">Landing Page Esencial</option>
-                  <option value="Landing Page Corporativa Pro">Landing Page Corporativa Pro</option>
-                  <option value="Landing Page Multi-Sección">Landing Page Multi-Sección</option>
+                  <option value="Landing Page One-Page (Sin Dominio)">Landing Page One-Page (Sin Dominio)</option>
+                  <option value="Landing Corporativa Pro (Con Dominio .COM)">Landing Corporativa Pro (Con Dominio .COM)</option>
+                  <option value="Sitio Web Corporativo Completo (Multi-Página + Correo Receptor)">Sitio Web Corporativo Completo (Multi-Página + Correo Receptor)</option>
                   <option value="Asesoría de Presencia Digital">Asesoría de Presencia Digital</option>
                 </select>
               </div>

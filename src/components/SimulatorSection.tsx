@@ -8,6 +8,7 @@ import {
   Coffee,
   Dumbbell,
   Stethoscope,
+  Briefcase,
   Zap,
   Send,
   CheckCircle2,
@@ -42,88 +43,33 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({ theme }) => 
 
   const industries: IndustryData[] = [
     {
-      id: 'arquitectura',
-      name: 'Arquitectura & Interiorismo',
-      shortTag: 'Arquitectura',
-      icon: <Building2 className="w-4 h-4" />,
-      domain: 'estudio-arquitectura.ec',
-      speed: 'Carga en 0.9s',
-      headline: 'Diseñamos Espacios Extraordinarios que Inspiran',
-      subheadline: 'Proyectos residenciales y corporativos de alto nivel. Transformamos tus ideas en arquitectura funcional.',
-      ctaText: 'Solicitar Asesoría por WhatsApp',
-      bgGradient: 'from-slate-900 via-slate-800 to-cyan-950',
-      badgeBg: 'bg-cyan-500/20 border-cyan-400/40',
-      badgeText: 'text-cyan-300',
-      bullets: [
-        'Portafolio de obras residenciales en alta resolución',
-        'Asesoría y pre-factibilidad de proyecto sin compromiso',
-        'Atención directa con el arquitecto principal',
-      ],
-      conversionTip: 'Un mensaje pre-estructurado le ahorra tiempo al cliente y te entrega la información exacta para cotizar de inmediato.',
-      waBusinessName: 'Estudio de Arquitectura',
-      waMessage: `¡Hola! Vengo desde su Landing Page.
-
-• *Interés:* Asesoría en Arquitectura & Interiorismo
-• *Tipo de Proyecto:* Remodelación / Obra Nueva
-• *Ubicación:* Ecuador
-
-Quisiera coordinar una cita previa para revisar mi proyecto.`,
-    },
-    {
-      id: 'gastronomia',
-      name: 'Cafetería & Gastronomía',
-      shortTag: 'Gastronomía',
-      icon: <Coffee className="w-4 h-4" />,
-      domain: 'bistro-gastronomia.ec',
+      id: 'corporativo',
+      name: 'Empresas & Servicios B2B',
+      shortTag: 'Empresas B2B',
+      icon: <Briefcase className="w-4 h-4" />,
+      domain: 'corporativo-soluciones.ec',
       speed: 'Carga en 0.8s',
-      headline: 'Sabor Auténtico & Experiencias Únicas',
-      subheadline: 'Disfruta de especialidades de café de origen, repostería artesanal y el mejor ambiente de la ciudad.',
-      ctaText: 'Ver Menú & Reservar por WhatsApp',
-      bgGradient: 'from-amber-950 via-slate-900 to-amber-900',
-      badgeBg: 'bg-amber-500/20 border-amber-400/40',
-      badgeText: 'text-amber-300',
+      headline: 'Soluciones Estratégicas & Asesoría Corporativa',
+      subheadline: 'Impulsamos la productividad y presencia digital de organizaciones con soluciones profesionales a medida.',
+      ctaText: 'Solicitar Propuesta B2B por WhatsApp',
+      bgGradient: 'from-slate-900 via-slate-800 to-indigo-950',
+      badgeBg: 'bg-indigo-500/20 border-indigo-400/40',
+      badgeText: 'text-indigo-300',
       bullets: [
-        'Menú digital interactivo en un solo clic',
-        'Reserva inmediata para eventos y mesas',
-        'Ubicación exacta integrada con Google Maps',
+        'Presentación institucional y catálogo de servicios',
+        'Canal directo para recepción de cotizaciones formales',
+        'Atención ejecutiva inmediata para tomadores de decisiones',
       ],
-      conversionTip: 'Los clientes prefieren enviar un WhatsApp directo para consultar disponibilidad de mesa o reservar menú.',
-      waBusinessName: 'Bistró & Café Artesanal',
-      waMessage: `¡Hola! Vengo desde su Landing Page.
+      conversionTip: 'Un mensaje institucional con datos clave permite preparar una cotización formal y asignar un ejecutivo de cuenta al instante.',
+      waBusinessName: 'Soluciones Corporativas B2B',
+      waMessage: `👋 ¡Hola! Vengo desde su Sitio Web Corporativo.
 
-• *Interés:* Reserva de Mesa & Menú
-• *Personas:* 4 personas
-• *Fecha:* Este fin de semana
+🏢 *Empresa:* Consultoría & Servicios Integrales
+💼 *Interés:* Propuesta de Servicios / Cotización B2B
+📍 *Ciudad:* Guayaquil / Quito
+👥 *Requerimiento:* Asesoría para Departamento Comercial
 
-Quisiera consultar disponibilidad de mesa en su local.`,
-    },
-    {
-      id: 'fitness',
-      name: 'Personal Trainer & Gym',
-      shortTag: 'Fitness',
-      icon: <Dumbbell className="w-4 h-4" />,
-      domain: 'coaching-fitness.ec',
-      speed: 'Carga en 0.9s',
-      headline: 'Alcanza tu Máximo Rendimiento Físico',
-      subheadline: 'Programas de entrenamiento personalizado, nutrición adaptada y resultados garantizados paso a paso.',
-      ctaText: 'Agendar Clase Gratis por WhatsApp',
-      bgGradient: 'from-slate-950 via-slate-900 to-sky-950',
-      badgeBg: 'bg-sky-500/20 border-sky-400/40',
-      badgeText: 'text-sky-300',
-      bullets: [
-        'Planes de entrenamiento 100% personalizados',
-        'Evaluación física inicial previa sin costo',
-        'Acompañamiento y motivación diaria directa',
-      ],
-      conversionTip: 'Captura prospectos calificados ofreciendo una evaluación inicial sin costo en un solo clic.',
-      waBusinessName: 'Coach Fitness Pro',
-      waMessage: `¡Hola! Vengo desde su Landing Page.
-
-• *Interés:* Clase de Prueba & Evaluación Gratis
-• *Objetivo:* Tonificación y Aumento de Masa
-• *Disponibilidad:* Horario Mañana / Tarde
-
-Quisiera agendar mi primera sesión de evaluación.`,
+📑 Quisiera coordinar una reunión para recibir su portafolio y propuesta formal.`,
     },
     {
       id: 'salud',
@@ -145,17 +91,101 @@ Quisiera agendar mi primera sesión de evaluación.`,
       ],
       conversionTip: 'La inmediatez en respuestas médicas y dentales transmite seguridad y genera la cita al instante.',
       waBusinessName: 'Clínica Dental Especializada',
-      waMessage: `¡Hola! Vengo desde su Landing Page.
+      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
 
-• *Interés:* Consulta y Valoración Odontológica
-• *Tratamiento:* Limpieza / Ortodoncia / Blanqueamiento
-• *Ciudad:* Quito / Guayaquil
+🦷 *Interés:* Consulta y Valoración Odontológica
+✨ *Tratamiento:* Limpieza / Ortodoncia / Blanqueamiento
+📍 *Ciudad:* Quito / Guayaquil
 
-Quisiera consultar disponibilidad de agenda para esta semana.`,
+📅 Quisiera consultar disponibilidad de agenda para esta semana.`,
+    },
+    {
+      id: 'arquitectura',
+      name: 'Arquitectura & Diseño',
+      shortTag: 'Arquitectura',
+      icon: <Building2 className="w-4 h-4" />,
+      domain: 'estudio-arquitectura.ec',
+      speed: 'Carga en 0.9s',
+      headline: 'Diseñamos Espacios Extraordinarios que Inspiran',
+      subheadline: 'Proyectos residenciales y corporativos de alto nivel. Transformamos tus ideas en arquitectura funcional.',
+      ctaText: 'Solicitar Asesoría por WhatsApp',
+      bgGradient: 'from-slate-900 via-slate-800 to-cyan-950',
+      badgeBg: 'bg-cyan-500/20 border-cyan-400/40',
+      badgeText: 'text-cyan-300',
+      bullets: [
+        'Portafolio de obras residenciales en alta resolución',
+        'Asesoría y pre-factibilidad de proyecto sin compromiso',
+        'Atención directa con el arquitecto principal',
+      ],
+      conversionTip: 'Un mensaje pre-estructurado le ahorra tiempo al cliente y te entrega la información exacta para cotizar de inmediato.',
+      waBusinessName: 'Estudio de Arquitectura',
+      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+
+📐 *Interés:* Asesoría en Arquitectura & Interiorismo
+🏡 *Tipo de Proyecto:* Remodelación / Obra Nueva
+📍 *Ciudad:* Guayaquil / Samborondón
+
+🗓️ Quisiera coordinar una cita previa para cotizar mi proyecto.`,
+    },
+    {
+      id: 'gastronomia',
+      name: 'Cafetería & Gastronomía',
+      shortTag: 'Gastronomía',
+      icon: <Coffee className="w-4 h-4" />,
+      domain: 'bistro-gastronomia.ec',
+      speed: 'Carga en 0.8s',
+      headline: 'Sabor Auténtico & Experiencias Únicas',
+      subheadline: 'Disfruta de especialidades de café de origen, repostería artesanal y el mejor ambiente de la ciudad.',
+      ctaText: 'Ver Menú & Reservar por WhatsApp',
+      bgGradient: 'from-amber-950 via-slate-900 to-amber-900',
+      badgeBg: 'bg-amber-500/20 border-amber-400/40',
+      badgeText: 'text-amber-300',
+      bullets: [
+        'Menú digital interactivo en un solo clic',
+        'Reserva inmediata para eventos y mesas',
+        'Ubicación exacta integrada con Google Maps',
+      ],
+      conversionTip: 'Los clientes prefieren enviar un WhatsApp directo para consultar disponibilidad de mesa o reservar menú.',
+      waBusinessName: 'Bistró & Café Artesanal',
+      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+
+☕ *Interés:* Reserva de Mesa & Menú Especial
+👥 *Personas:* 4 a 6 personas
+📅 *Fecha:* Este fin de semana
+
+🍽️ Quisiera consultar disponibilidad de mesa y opciones de menú.`,
+    },
+    {
+      id: 'fitness',
+      name: 'Personal Trainer & Gym',
+      shortTag: 'Fitness',
+      icon: <Dumbbell className="w-4 h-4" />,
+      domain: 'coaching-fitness.ec',
+      speed: 'Carga en 0.9s',
+      headline: 'Alcanza tu Máximo Rendimiento Físico',
+      subheadline: 'Programas de entrenamiento personalizado, nutrición adaptada y resultados garantizados paso a paso.',
+      ctaText: 'Agendar Clase Gratis por WhatsApp',
+      bgGradient: 'from-slate-950 via-slate-900 to-sky-950',
+      badgeBg: 'bg-sky-500/20 border-sky-400/40',
+      badgeText: 'text-sky-300',
+      bullets: [
+        'Planes de entrenamiento 100% personalizados',
+        'Evaluación física inicial previa sin costo',
+        'Acompañamiento y motivación diaria directa',
+      ],
+      conversionTip: 'Captura prospectos calificados ofreciendo una evaluación inicial sin costo en un solo clic.',
+      waBusinessName: 'Coach Fitness Pro',
+      waMessage: `👋 ¡Hola! Vengo desde su Landing Page.
+
+🏋️ *Interés:* Clase de Prueba & Evaluación Inicial
+🎯 *Objetivo:* Tonificación & Acondicionamiento Físico
+⏰ *Horario:* Mañana / Tarde
+
+💪 Quisiera agendar mi primera sesión de diagnóstico sin costo.`,
     },
   ];
 
-  const [activeIndustryId, setActiveIndustryId] = useState<string>('arquitectura');
+  const [activeIndustryId, setActiveIndustryId] = useState<string>('corporativo');
   const [copied, setCopied] = useState<boolean>(false);
   const [sentNotice, setSentNotice] = useState<boolean>(false);
 
@@ -177,7 +207,7 @@ Quisiera consultar disponibilidad de agenda para esta semana.`,
   return (
     <section
       id="simulador"
-      className={`py-16 sm:py-24 relative overflow-hidden transition-colors duration-300 border-b ${
+      className={`py-10 md:py-12 lg:py-8 xl:py-10 lg:min-h-[calc(100vh-4rem)] lg:flex lg:flex-col lg:justify-center relative overflow-hidden transition-colors duration-300 border-b ${
         isLight
           ? 'bg-[#E0E5EC] border-[#4A6A8C]/15 text-[#2D3436]'
           : 'bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-slate-800'
@@ -186,11 +216,11 @@ Quisiera consultar disponibilidad de agenda para esta semana.`,
       {/* Background Decorator Grids */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-6 lg:mb-7">
           <div
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold tracking-wide uppercase shadow-xs mb-3.5 ${
+            className={`inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full border text-[11px] font-semibold tracking-wide uppercase shadow-xs mb-2 ${
               isLight
                 ? 'bg-white border-[#C5A059]/40 text-[#2D3436] font-bold'
                 : 'bg-emerald-950/60 border-emerald-400/30 text-emerald-300'
@@ -201,7 +231,7 @@ Quisiera consultar disponibilidad de agenda para esta semana.`,
           </div>
 
           <h2
-            className={`font-display font-extrabold text-2xl sm:text-4xl lg:text-4xl tracking-tight leading-tight ${
+            className={`font-display font-extrabold text-2xl sm:text-3xl lg:text-[2rem] tracking-tight leading-tight ${
               isLight ? 'text-[#2D3436]' : 'text-white'
             }`}
           >
@@ -209,16 +239,15 @@ Quisiera consultar disponibilidad de agenda para esta semana.`,
           </h2>
 
           <p
-            className={`mt-3 text-sm sm:text-base leading-relaxed ${
+            className={`mt-1.5 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed ${
               isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
             }`}
           >
-            Nuestras Landing Pages configuran botones de WhatsApp con mensajes pre-estructurados.
-            Tus clientes solo hacen 1 clic y tú recibes la información lista para cotizar o agendar.
+            Configuramos botones de WhatsApp con mensajes pre-estructurados para que recibas la información lista para cotizar.
           </p>
 
           {/* Industry Selector Tabs (Pill style) */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <div className="mt-3.5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
             {industries.map((ind) => {
               const isActive = ind.id === activeIndustryId;
               return (
@@ -227,11 +256,11 @@ Quisiera consultar disponibilidad de agenda para esta semana.`,
                   onClick={() => {
                     setActiveIndustryId(ind.id);
                   }}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-xs font-semibold transition-all duration-200 cursor-pointer border shadow-xs ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer border shadow-xs ${
                     isActive
                       ? isLight
-                        ? 'bg-[#4A6A8C] text-white border-[#4A6A8C] shadow-md scale-105 font-bold'
-                        : 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-md shadow-emerald-500/20 scale-105'
+                        ? 'bg-[#4A6A8C] text-white border-[#4A6A8C] shadow-sm scale-105 font-bold'
+                        : 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-sm shadow-emerald-500/20 scale-105'
                       : isLight
                       ? 'bg-white text-[#2D3436] border-[#4A6A8C]/25 hover:bg-[#F2F5F9]'
                       : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:bg-slate-800 hover:text-white'

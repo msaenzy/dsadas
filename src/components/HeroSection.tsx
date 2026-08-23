@@ -37,7 +37,7 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
   return (
     <section
       id="inicio"
-      className={`relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300 ${
+      className={`relative pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-8 xl:py-10 lg:min-h-[calc(100vh-4rem)] lg:flex lg:items-center px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300 ${
         isLight
           ? 'bg-[#E0E5EC] shell-ridges-light text-[#2D3436]'
           : 'bg-[#070911] shell-ridges-dark text-slate-300'
@@ -55,7 +55,7 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
         }`}
       />
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-14 items-center relative z-10">
         {/* Text Content Column */}
         <div>
           {/* Location / Agency Badge */}
@@ -65,18 +65,18 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className={`inline-flex items-center gap-2 border rounded-full px-4 py-1.5 mb-6 shadow-xs ${
+            className={`inline-flex items-center gap-2 border rounded-full px-3.5 py-1 mb-4 sm:mb-5 shadow-xs ${
               isLight
                 ? 'border-[#C5A059]/40 bg-white/90 text-[#2D3436]'
                 : 'border-amber-300/35 bg-amber-300/5 text-amber-300'
             }`}
           >
             <span
-              className={`w-2.5 h-2.5 rounded-full animate-pulse ${
+              className={`w-2 h-2 rounded-full animate-pulse ${
                 isLight ? 'bg-[#C5A059]' : 'bg-amber-300'
               }`}
             />
-            <span className="font-mono text-xs tracking-wider uppercase font-semibold">
+            <span className="font-mono text-[11px] sm:text-xs tracking-wider uppercase font-semibold">
               Agencia de Desarrollo Web · Guayaquil, EC
             </span>
           </motion.div>
@@ -87,7 +87,7 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className={`font-display font-extrabold text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.1] tracking-tight ${
+            className={`font-display font-extrabold text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.15rem] leading-[1.12] tracking-tight ${
               isLight ? 'text-[#2D3436]' : 'text-white'
             }`}
           >
@@ -103,7 +103,7 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className={`font-body text-base sm:text-lg mt-6 max-w-xl leading-relaxed ${
+            className={`font-body text-sm sm:text-base mt-4 max-w-xl leading-relaxed ${
               isLight ? 'text-[#2D3436]/80' : 'text-slate-400'
             }`}
           >
@@ -117,22 +117,22 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6"
           >
             <button
               onClick={() => onNavigateTo('planes')}
-              className={`cta-shimmer inline-flex items-center justify-center gap-2.5 font-bold text-base px-7 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl cursor-pointer ${
+              className={`cta-shimmer inline-flex items-center justify-center gap-2 font-bold text-sm sm:text-base px-6 py-3 rounded-full transition-all shadow-md hover:shadow-lg cursor-pointer ${
                 isLight
                   ? 'bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-[#4A6A8C]/25 hover:-translate-y-0.5'
                   : 'bg-cyan-400 hover:bg-cyan-300 text-slate-950 shadow-cyan-400/25 hover:-translate-y-0.5'
               }`}
             >
               Ver Planes
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => onNavigateTo('contacto')}
-              className={`inline-flex items-center justify-center gap-2 border font-bold text-base px-7 py-3.5 rounded-full transition-all cursor-pointer ${
+              className={`inline-flex items-center justify-center gap-2 border font-bold text-sm sm:text-base px-6 py-3 rounded-full transition-all cursor-pointer ${
                 isLight
                   ? 'border-[#4A6A8C]/40 bg-white hover:bg-[#F2F5F9] text-[#2D3436] hover:border-[#4A6A8C] shadow-xs'
                   : 'border-slate-700 hover:border-amber-300/60 hover:text-amber-300 text-slate-200'
@@ -149,7 +149,7 @@ export default function HeroSection({ theme, onNavigateTo }: HeroSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className={`grid grid-cols-3 gap-4 mt-10 pt-8 border-t ${
+            className={`grid grid-cols-3 gap-3 mt-6 pt-5 border-t ${
               isLight ? 'border-[#4A6A8C]/20' : 'border-slate-800/80'
             }`}
           >
