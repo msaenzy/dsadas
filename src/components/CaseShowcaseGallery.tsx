@@ -30,7 +30,7 @@ interface CaseShowcaseGalleryProps {
 export default function CaseShowcaseGallery({
   theme,
   onNavigateToContact,
-  defaultCategory = 'medico'
+  defaultCategory = 'todos'
 }: CaseShowcaseGalleryProps) {
   const isLight = theme === 'light';
 
@@ -73,11 +73,27 @@ export default function CaseShowcaseGallery({
   return (
     <div className="w-full space-y-10">
       {/* Category Filter & Search Header */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 sm:p-6 rounded-3xl border backdrop-blur-md shadow-sm transition-all ${
+      <div className={`flex flex-col md:flex-row items-center justify-between gap-4 p-4 sm:p-6 rounded-3xl border backdrop-blur-md shadow-sm transition-all ${
         isLight ? 'bg-white/80 border-[#4A6A8C]/20' : 'bg-slate-900/60 border-slate-800'
-      }">
+      }`}>
         {/* Category Buttons */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+          <button
+            onClick={() => setSelectedCategory('todos')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border ${
+              selectedCategory === 'todos'
+                ? isLight
+                  ? 'bg-[#37526E] text-white border-[#37526E] shadow-md scale-105'
+                  : 'bg-cyan-400 text-slate-950 border-cyan-300 shadow-md scale-105'
+                : isLight
+                ? 'bg-[#E0E5EC] text-[#2D3436] border-[#4A6A8C]/20 hover:bg-white'
+                : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'
+            }`}
+          >
+            <LayoutGrid className="w-4 h-4" />
+            <span>Todos los Proyectos ({projectsData.length})</span>
+          </button>
+
           {CATEGORIES_CONFIG.map((cat) => {
             const Icon = getCategoryIcon(cat.id as CategoryId);
             const isActive = selectedCategory === cat.id;
@@ -113,22 +129,6 @@ export default function CaseShowcaseGallery({
               </button>
             );
           })}
-
-          <button
-            onClick={() => setSelectedCategory('todos')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border ${
-              selectedCategory === 'todos'
-                ? isLight
-                  ? 'bg-[#37526E] text-white border-[#37526E] shadow-md'
-                  : 'bg-cyan-400 text-slate-950 border-cyan-300 shadow-md'
-                : isLight
-                ? 'bg-[#E0E5EC] text-[#2D3436] border-[#4A6A8C]/20 hover:bg-white'
-                : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'
-            }`}
-          >
-            <LayoutGrid className="w-4 h-4" />
-            <span>Todos ({projectsData.length})</span>
-          </button>
         </div>
 
         {/* Search Input Bar */}

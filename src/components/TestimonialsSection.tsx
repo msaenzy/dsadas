@@ -17,7 +17,7 @@ export default function TestimonialsSection({
   onNavigateToGallery
 }: TestimonialsSectionProps) {
   const isLight = theme === 'light';
-  const [selectedCategory, setSelectedCategory] = useState<CategoryId>('medico');
+  const [selectedCategory, setSelectedCategory] = useState<CategoryId>('todos');
   const [selectedModalProject, setSelectedModalProject] = useState<CaseProject | null>(null);
 
   return (

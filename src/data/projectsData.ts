@@ -43,10 +43,17 @@ export interface CaseProject {
   authorRole: string;
   initials: string;
   demoUrl?: string;
+  liveUrl?: string;
   instagram?: string;
 }
 
 export const CATEGORIES_CONFIG = [
+  {
+    id: 'mas' as const,
+    label: 'Diseño, Merch & Tiendas',
+    iconName: 'Sparkles',
+    description: 'Marcas de diseño, merchandising geek, tiendas y marcas creativas.',
+  },
   {
     id: 'medico' as const,
     label: 'Dental / Médico',
@@ -65,15 +72,74 @@ export const CATEGORIES_CONFIG = [
     iconName: 'Briefcase',
     description: 'Estudios jurídicos, firmas contables, arquitectura e industrias B2B.',
   },
-  {
-    id: 'mas' as const,
-    label: 'Más Categorías',
-    iconName: 'Sparkles',
-    description: 'Inmobiliaria, centros de fitness, tiendas online y marcas en crecimiento.',
-  },
 ];
 
 export const projectsData: CaseProject[] = [
+  // ==========================================
+  // 1. PROYECTO DESTACADO #1: COSMIC DESIGN (EN VIVO EN NETLIFY)
+  // ==========================================
+  {
+    id: 'mas-cosmic',
+    category: 'mas',
+    categoryLabel: 'Diseño & Merch Geek',
+    title: 'Cosmic Design | Universo Creativo & Merchandising',
+    subtitle: 'Prints, Stickers Holográficos & Merch Geek',
+    description: 'Proyecto de diseño gráfico e ilustración dedicado a la creación de productos de papelería, accesorios y piezas coleccionables inspiradas en el arte visual, la cultura geek, el anime y la estética contemporánea.',
+    image: '/imagenes/proyectos/cosmic/portada.jpg',
+    gallery: [
+      {
+        id: 'portada',
+        title: 'Portada · Universo Creativo',
+        url: '/imagenes/proyectos/cosmic/portada.jpg'
+      },
+      {
+        id: 'slide1',
+        title: 'Slide 1 · Stickers & Calcomanías',
+        url: '/imagenes/proyectos/cosmic/slide1.jpg'
+      },
+      {
+        id: 'slide2',
+        title: 'Slide 2 · Láminas & Pósters A4/A3',
+        url: '/imagenes/proyectos/cosmic/slide2.jpg'
+      },
+      {
+        id: 'slide3',
+        title: 'Slide 3 · Accesorios & Merch',
+        url: '/imagenes/proyectos/cosmic/slide3.jpg'
+      }
+    ],
+    location: 'Sitio Web en Vivo · Envíos Nacionales',
+    metricBadge: 'Web en Vivo · Netlify',
+    url: 'cosmicdesign-ar.netlify.app',
+    liveUrl: 'https://cosmicdesign-ar.netlify.app/',
+    demoUrl: 'https://cosmicdesign-ar.netlify.app/',
+    instagram: 'cosmicdesign.ar',
+    heroGradient: 'from-pink-500/20 via-purple-500/10 to-white',
+    accentColor: '#EC4899',
+    tags: ['Sitio Web en Vivo', 'Prints & Pósters', 'Stickers Holográficos', 'Merch Anime/Geek', 'Instagram DM Sales'],
+    objective: 'Presentar el catálogo interactivo de prints, calcomanías resistentes y accesorios geek con canal de compra directa vía Instagram DM y sitio web en vivo.',
+    result: 'Presentación visual de alto impacto alojada en Netlify con navegación interactiva estilo galería de producto que eleva el valor percibido de cada pieza.',
+    technologies: ['React 18', 'Tailwind CSS', 'Netlify Cloud', 'Instagram DM API', 'Multi-slide Image Zoom', 'Mobile Touch Swipe'],
+    challenge: 'Exhibir la variedad de piezas artísticas (stickers holográficos, láminas en papeles especiales, llaveros acrílicos y packaging a medida) de forma interactiva y atractiva para compradores en redes sociales.',
+    solution: 'Implementamos un sitio web optimizado en Netlify con visor multi-imagen (portada y 3 slides temáticos) con miniaturas dinámicas estilo Amazon, zoom responsivo y enlace directo para coordinar stock y pedidos.',
+    features: [
+      'Sitio web en vivo disponible en Netlify (cosmicdesign-ar.netlify.app)',
+      'Stickers & Calcomanías: Vinilos resistentes al agua, acabados holográficos y troquelados de precisión',
+      'Láminas & Pósters: Impresiones de alta definición en papeles especiales (formatos A4 y A3)',
+      'Accesorios & Merch: Llaveros acrílicos, pins metálicos y tote bags ilustradas',
+      'Personalización para Emprendimientos: Diseño y producción de packaging y stickers de marca a medida',
+      'Atención personalizada: Coordinación de stock, encargos y entregas directas por DM de Instagram'
+    ],
+    stats: [
+      { label: 'Sitio Web Activo', value: 'Netlify' },
+      { label: 'Formato Catálogo', value: 'Multi-Slide HD' },
+      { label: 'Acabados Merch', value: 'Holográfico' }
+    ],
+    quote: 'El sitio web en vivo y el visor interactivo permiten a nuestros seguidores apreciar cada detalle del papel especial, los brillos holográficos y el packaging antes de comprar.',
+    author: 'Cosmic Team',
+    authorRole: 'Ilustración & Dirección Creativa · @cosmicdesign.ar',
+    initials: 'CD'
+  },
   // ==========================================
   // 1. DENTAL / MÉDICO (CATEGORÍA POR DEFECTO)
   // ==========================================
@@ -405,65 +471,6 @@ export const projectsData: CaseProject[] = [
     author: 'Arq. Lucía Paredes',
     authorRole: 'Directora de Arquitectura · Alaia Studio',
     initials: 'LP'
-  },
-  {
-    id: 'mas-cosmic',
-    category: 'mas',
-    categoryLabel: 'Diseño & Merch',
-    title: 'Cosmic Design | Universo Creativo & Merchandising',
-    subtitle: 'Prints, Stickers Holográficos & Merch Geek',
-    description: 'Proyecto de diseño gráfico e ilustración dedicado a la creación de productos de papelería, accesorios y piezas coleccionables inspiradas en el arte visual, la cultura geek, el anime y la estética contemporánea.',
-    image: '/imagenes/proyectos/cosmic/portada.jpg',
-    gallery: [
-      {
-        id: 'portada',
-        title: 'Portada · Universo Creativo',
-        url: '/imagenes/proyectos/cosmic/portada.jpg'
-      },
-      {
-        id: 'slide1',
-        title: 'Slide 1 · Stickers & Calcomanías',
-        url: '/imagenes/proyectos/cosmic/slide1.jpg'
-      },
-      {
-        id: 'slide2',
-        title: 'Slide 2 · Láminas & Pósters A4/A3',
-        url: '/imagenes/proyectos/cosmic/slide2.jpg'
-      },
-      {
-        id: 'slide3',
-        title: 'Slide 3 · Accesorios & Merch',
-        url: '/imagenes/proyectos/cosmic/slide3.jpg'
-      }
-    ],
-    location: 'Venta Online · Instagram DM',
-    metricBadge: 'Ventas por Instagram DM',
-    url: 'instagram.com/cosmicdesign.ar',
-    instagram: 'cosmicdesign.ar',
-    heroGradient: 'from-pink-500/20 via-purple-500/10 to-white',
-    accentColor: '#EC4899',
-    tags: ['Prints & Pósters', 'Stickers Vinilo', 'Merch Anime/Geek', 'Instagram DM Sales', 'Packaging Personalizado'],
-    objective: 'Presentar el catálogo interactivo de prints, calcomanías resistentes y accesorios geek con canal de compra directa vía Instagram DM.',
-    result: 'Presentación visual de alto impacto con navegación interactiva estilo galería de producto que eleva el valor percibido de cada pieza.',
-    technologies: ['React', 'Tailwind CSS', 'Instagram DM API', 'Multi-slide Image Zoom', 'Mobile Touch Swipe'],
-    challenge: 'Exhibir la variedad de piezas artísticas (stickers holográficos, láminas en papeles especiales, llaveros acrílicos y packaging a medida) de forma interactiva y atractiva para compradores en redes sociales.',
-    solution: 'Implementamos una vitrina interactiva con visor multi-imagen (portada y 3 slides temáticos) con miniaturas dinámicas estilo Amazon, zoom responsivo y enlace directo para coordinar stock y pedidos por Instagram.',
-    features: [
-      'Stickers & Calcomanías: Vinilos resistentes al agua, acabados holográficos y troquelados de precisión',
-      'Láminas & Pósters: Impresiones de alta definición en papeles especiales (formatos A4 y A3)',
-      'Accesorios & Merch: Llaveros acrílicos, pins metálicos y tote bags ilustradas',
-      'Personalización para Emprendimientos: Diseño y producción de packaging, tarjetas de agradecimiento y stickers de marca a medida',
-      'Atención personalizada: Coordinación de stock, encargos y entregas directas por DM de Instagram'
-    ],
-    stats: [
-      { label: 'Canal de Ventas', value: 'Instagram DM' },
-      { label: 'Formato Catálogo', value: 'Multi-Slide HD' },
-      { label: 'Acabados Merch', value: 'Holográfico' }
-    ],
-    quote: 'El visor de imágenes permite a nuestros seguidores apreciar cada detalle del papel especial, los brillos holográficos y el packaging antes de enviarnos un DM para comprar.',
-    author: 'Cosmic Team',
-    authorRole: 'Ilustración & Dirección Creativa · @cosmicdesign.ar',
-    initials: 'CD'
   },
   {
     id: 'mas-2',

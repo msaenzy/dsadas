@@ -327,7 +327,18 @@ export default function ProjectDetailModal({
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center justify-end gap-3 w-full sm:w-auto">
+              {(project.liveUrl || (project.demoUrl && !project.demoUrl.startsWith('/'))) && (
+                <a
+                  href={project.liveUrl || project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-5 py-3 rounded-full font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white shadow-md flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Ver Sitio Web en Vivo</span>
+                </a>
+              )}
               {project.instagram && (
                 <a
                   href={`https://ig.me/m/${project.instagram}`}
@@ -341,7 +352,7 @@ export default function ProjectDetailModal({
               )}
               <button
                 onClick={handleContactClick}
-                className="cta-shimmer w-full sm:w-auto px-7 py-3 rounded-full font-bold text-xs bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-md flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"
+                className="cta-shimmer w-full sm:w-auto px-6 py-3 rounded-full font-bold text-xs bg-[#4A6A8C] hover:bg-[#37526E] text-white shadow-md flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"
               >
                 <Sparkles className="w-4 h-4 text-[#C5A059]" />
                 <span>Quiero una Landing Page como esta</span>

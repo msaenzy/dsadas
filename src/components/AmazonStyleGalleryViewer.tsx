@@ -8,7 +8,8 @@ import {
   Instagram,
   Sparkles,
   Layers,
-  ZoomIn
+  ZoomIn,
+  ExternalLink
 } from 'lucide-react';
 import { ProjectGalleryImage } from '../data/projectsData';
 import { ThemeMode } from '../types';
@@ -129,16 +130,31 @@ export default function AmazonStyleGalleryViewer({
         </div>
 
         <div className="flex items-center gap-2 bg-white/80 dark:bg-slate-900/90 px-3 py-1 rounded-md text-[11px] font-bold border border-slate-300 dark:border-slate-700">
-          {instagramHandle ? (
-            <>
+          {projectUrl && (projectUrl.includes('netlify.app') || projectUrl.includes('.com') || projectUrl.includes('.ec')) ? (
+            <a
+              href={projectUrl.startsWith('http') ? projectUrl : `https://${projectUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-[#37526E] dark:text-cyan-300 hover:underline"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-[#C5A059]" />
+              <span>{projectUrl.replace(/^https?:\/\//, '')}</span>
+            </a>
+          ) : instagramHandle ? (
+            <a
+              href={`https://instagram.com/${instagramHandle}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-pink-600 hover:underline"
+            >
               <Instagram className="w-3.5 h-3.5 text-pink-600" />
               <span>@{instagramHandle}</span>
-            </>
+            </a>
           ) : (
-            <>
+            <div className="flex items-center gap-1.5">
               <Layers className="w-3 h-3 text-[#4A6A8C]" />
               <span>https://{projectUrl}</span>
-            </>
+            </div>
           )}
         </div>
 

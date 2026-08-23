@@ -106,6 +106,23 @@ export default function ProjectCarousel({
     <div className="w-full space-y-8">
       {/* Category Filter Bar */}
       <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        {/* Option for 'Todos los proyectos' first */}
+        <button
+          onClick={() => onSelectCategory('todos')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer border shadow-xs ${
+            selectedCategory === 'todos'
+              ? isLight
+                ? 'bg-[#37526E] text-white border-[#37526E] font-bold shadow-md shadow-[#37526E]/20 scale-105'
+                : 'bg-cyan-400 text-slate-950 border-cyan-300 font-bold shadow-md scale-105'
+              : isLight
+              ? 'bg-white text-[#2D3436] border-[#4A6A8C]/20 hover:bg-[#F2F5F9]'
+              : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:bg-slate-800'
+          }`}
+        >
+          <LayoutGrid className="w-4 h-4" />
+          <span>Todos los Proyectos ({projectsData.length})</span>
+        </button>
+
         {CATEGORIES_CONFIG.map((cat) => {
           const Icon = getCategoryIcon(cat.id as CategoryId);
           const isActive = selectedCategory === cat.id;
@@ -153,23 +170,6 @@ export default function ProjectCarousel({
             </button>
           );
         })}
-
-        {/* Option for 'Todos los proyectos' */}
-        <button
-          onClick={() => onSelectCategory('todos')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer border ${
-            selectedCategory === 'todos'
-              ? isLight
-                ? 'bg-[#37526E] text-white border-[#37526E] font-bold shadow-md'
-                : 'bg-cyan-400 text-slate-950 border-cyan-300 font-bold shadow-md'
-              : isLight
-              ? 'bg-white text-[#2D3436] border-[#4A6A8C]/20 hover:bg-[#F2F5F9]'
-              : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:bg-slate-800'
-          }`}
-        >
-          <LayoutGrid className="w-4 h-4" />
-          <span>Ver Todos ({projectsData.length})</span>
-        </button>
       </div>
 
       {/* Carousel Container */}
