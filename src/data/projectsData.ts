@@ -85,27 +85,27 @@ export const projectsData: CaseProject[] = [
     title: 'Cosmic Design | Universo Creativo & Merchandising',
     subtitle: 'Prints, Stickers Holográficos & Merch Geek',
     description: 'Proyecto de diseño gráfico e ilustración dedicado a la creación de productos de papelería, accesorios y piezas coleccionables inspiradas en el arte visual, la cultura geek, el anime y la estética contemporánea.',
-    image: '/imagenes/proyectos/cosmic/portada.jpg',
+    image: '/imagenes/proyectos/cosmic/portada.png',
     gallery: [
       {
         id: 'portada',
         title: 'Portada · Universo Creativo',
-        url: '/imagenes/proyectos/cosmic/portada.jpg'
+        url: '/imagenes/proyectos/cosmic/portada.png'
       },
       {
         id: 'slide1',
         title: 'Slide 1 · Stickers & Calcomanías',
-        url: '/imagenes/proyectos/cosmic/slide1.jpg'
+        url: '/imagenes/proyectos/cosmic/slide1.png'
       },
       {
         id: 'slide2',
         title: 'Slide 2 · Láminas & Pósters A4/A3',
-        url: '/imagenes/proyectos/cosmic/slide2.jpg'
+        url: '/imagenes/proyectos/cosmic/slide2.png'
       },
       {
         id: 'slide3',
         title: 'Slide 3 · Accesorios & Merch',
-        url: '/imagenes/proyectos/cosmic/slide3.jpg'
+        url: '/imagenes/proyectos/cosmic/slide3.png'
       }
     ],
     location: 'Sitio Web en Vivo · Envíos Nacionales',
