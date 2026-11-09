@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Portal Dra. Martha Sánchez | Spondylus Soluciones Digitales</title>
+  <title>Panel Web · Dra. Martha Sánchez | Spondylus Soluciones Digitales</title>
   <meta name="description" content="Acceso directo y seguro al sistema de gestión clínica de la Dra. Martha Sánchez." />
   <meta name="robots" content="noindex, nofollow, noarchive" />
 
@@ -57,8 +57,8 @@
 
     /* Top bar */
     .header-bar {
-      height: 60px;
-      min-height: 60px;
+      height: 58px;
+      min-height: 58px;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -67,7 +67,7 @@
       padding: 0 16px;
       gap: 12px;
       z-index: 20;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
     .brand-section {
@@ -96,7 +96,7 @@
 
     .client-name {
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--primary-dark);
       letter-spacing: -0.01em;
       display: flex;
@@ -113,7 +113,6 @@
       border: 1px solid #A7F3D0;
       padding: 1px 7px;
       border-radius: 999px;
-      letter-spacing: 0.02em;
     }
 
     .powered-by {
@@ -135,6 +134,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       padding: 7px 14px;
       border-radius: 8px;
@@ -185,7 +185,7 @@
       position: relative;
       flex: 1;
       width: 100%;
-      height: calc(100% - 60px);
+      height: calc(100% - 58px);
       background: #FFFFFF;
     }
 
@@ -198,7 +198,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       z-index: 10;
       transition: opacity 0.35s ease, visibility 0.35s ease;
     }
@@ -210,8 +210,8 @@
     }
 
     .spinner {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border: 3.5px solid #E2E8F0;
       border-top-color: var(--primary);
       border-radius: 50%;
@@ -223,7 +223,7 @@
     }
 
     .loader-title {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 600;
       color: var(--primary-dark);
     }
@@ -242,21 +242,17 @@
       display: block;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 640px) {
       .header-bar {
         padding: 0 12px;
-        height: 56px;
-        min-height: 56px;
+        height: 54px;
+        min-height: 54px;
       }
       .viewport {
-        height: calc(100% - 56px);
+        height: calc(100% - 54px);
       }
       .powered-by {
         display: none;
-      }
-      .client-name {
-        font-size: 13.5px;
       }
       .btn-text {
         display: none;
@@ -278,7 +274,7 @@
         <div class="brand-titles">
           <div class="client-name">
             <span>Dra. Martha Sánchez</span>
-            <span class="client-badge">Activo</span>
+            <span class="client-badge">Panel Seguro</span>
           </div>
           <div class="powered-by">
             Gestionado por <strong>Spondylus Soluciones Digitales</strong>
@@ -287,8 +283,8 @@
       </a>
 
       <div class="actions-section">
-        <button id="btn-reload" class="btn-icon-only" title="Recargar sistema" aria-label="Recargar">
-          <i data-lucide="rotate-cw" style="width: 16px; height: 16px;"></i>
+        <button id="btn-reload" class="btn-icon-only" title="Recargar panel" aria-label="Recargar">
+          <i data-lucide="rotate-cw" style="width: 15px; height: 15px;"></i>
         </button>
 
         <a id="btn-external" href="https://script.google.com/macros/s/AKfycbw1S53Uf_nC1JLTFKg8O-KO2euTqvGS8nZJe0e2pmDv1Iv3uLZel6FHoJ8azDL5yB0D/exec" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Abrir en ventana completa">
@@ -303,20 +299,18 @@
       </div>
     </header>
 
-    <!-- Main Viewport -->
+    <!-- Main Viewport with Full Embedded App -->
     <main class="viewport">
-      <!-- Loading overlay -->
       <div id="loader" class="loader-overlay">
         <div class="spinner"></div>
-        <div class="loader-title">Conectando al Sistema Clínico...</div>
-        <div class="loader-desc">Cargando el entorno de la Dra. Martha Sánchez. Por favor, espere un momento.</div>
+        <div class="loader-title">Cargando Panel de Gestión...</div>
+        <div class="loader-desc">Conectando de forma segura. Por favor, espere un instante.</div>
       </div>
 
-      <!-- Secure Iframe Wrapper -->
       <iframe
         id="app-frame"
         src="https://script.google.com/macros/s/AKfycbw1S53Uf_nC1JLTFKg8O-KO2euTqvGS8nZJe0e2pmDv1Iv3uLZel6FHoJ8azDL5yB0D/exec"
-        title="Sistema Dra. Martha Sánchez"
+        title="Panel Dra. Martha Sánchez"
         allow="camera; microphone; geolocation; clipboard-read; clipboard-write; fullscreen"
         loading="eager"
       ></iframe>
@@ -324,7 +318,6 @@
   </div>
 
   <script>
-    // Initialize Lucide icons
     if (window.lucide) {
       lucide.createIcons();
     }
@@ -333,28 +326,21 @@
     const iframe = document.getElementById('app-frame');
     const btnReload = document.getElementById('btn-reload');
 
-    // Hide loader when iframe finishes loading
     iframe.addEventListener('load', () => {
       setTimeout(() => {
-        if (loader) {
-          loader.classList.add('hidden');
-        }
-      }, 500);
+        if (loader) loader.classList.add('hidden');
+      }, 400);
     });
 
-    // Fallback: hide loader after 5 seconds in case load event is suppressed by cross-origin
     setTimeout(() => {
       if (loader && !loader.classList.contains('hidden')) {
         loader.classList.add('hidden');
       }
-    }, 5000);
+    }, 4500);
 
-    // Reload button
     if (btnReload) {
       btnReload.addEventListener('click', () => {
-        if (loader) {
-          loader.classList.remove('hidden');
-        }
+        if (loader) loader.classList.remove('hidden');
         iframe.src = iframe.src;
       });
     }
