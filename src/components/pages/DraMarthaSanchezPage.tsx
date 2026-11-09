@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Headphones, ArrowLeft, ShieldCheck, Database, Smartphone, Stethoscope, Lock } from 'lucide-react';
+import { ExternalLink, ArrowLeft, ShieldCheck, Database, Smartphone, Stethoscope, Lock } from 'lucide-react';
 
 interface DraMarthaSanchezViewProps {
   onBackToHome?: () => void;
@@ -42,18 +42,6 @@ export default function DraMarthaSanchezView({ onBackToHome }: DraMarthaSanchezV
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <a
-            href="https://wa.me/593958876957?text=Hola%20Spondylus,%20tengo%20una%20consulta%20sobre%20el%20portal%20de%20la%20Dra.%20Martha%20S%C3%A1nchez"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 shadow-xs transition-colors"
-          >
-            <Headphones className="w-3.5 h-3.5 text-[#37526E]" />
-            <span>Soporte</span>
-          </a>
         </div>
       </header>
 
