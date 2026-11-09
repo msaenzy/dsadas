@@ -16,13 +16,49 @@ import ContactoPage from './components/pages/ContactoPage';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
+import DraMarthaSanchezView from './components/pages/DraMarthaSanchezPage';
+
 export default function App() {
+  // Check if current URL path or hash matches DraMarthaSanchez
+  const checkIsDraMarthaSanchez = () => {
+    if (typeof window === 'undefined') return false;
+    const path = window.location.pathname.toLowerCase();
+    const hash = window.location.hash.toLowerCase();
+    const search = window.location.search.toLowerCase();
+    return (
+      path.includes('dramarthasanchez') ||
+      hash.includes('dramarthasanchez') ||
+      search.includes('dramarthasanchez')
+    );
+  };
+
+  const [isDraMarthaPage, setIsDraMarthaPage] = useState<boolean>(checkIsDraMarthaSanchez);
   // Default to 'light' (Versión de día) as requested
   const [theme, setTheme] = useState<ThemeMode>('light');
   const [activeTab, setActiveTab] = useState<string>('inicio');
   const [selectedPlanTitle, setSelectedPlanTitle] = useState<string>('');
 
   const isLight = theme === 'light';
+
+  // Listen to popstate in case URL changes
+  React.useEffect(() => {
+    const handlePopState = () => {
+      setIsDraMarthaPage(checkIsDraMarthaSanchez());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  if (isDraMarthaPage) {
+    return (
+      <DraMarthaSanchezView
+        onBackToHome={() => {
+          setIsDraMarthaPage(false);
+          window.history.pushState({}, '', '/');
+        }}
+      />
+    );
+  }
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));

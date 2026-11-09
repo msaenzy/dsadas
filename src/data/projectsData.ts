@@ -108,8 +108,8 @@ export const projectsData: CaseProject[] = [
         url: '/imagenes/proyectos/cosmic/slide3.png'
       }
     ],
-    location: 'Sitio Web en Vivo · Envíos Nacionales',
-    metricBadge: 'Web en Vivo · Netlify',
+    location: 'Catálogo Visual & Shop Online',
+    metricBadge: 'Showroom Digital · En Vivo',
     url: 'cosmicdesign-ar.netlify.app',
     liveUrl: 'https://cosmicdesign-ar.netlify.app/',
     demoUrl: 'https://cosmicdesign-ar.netlify.app/',
