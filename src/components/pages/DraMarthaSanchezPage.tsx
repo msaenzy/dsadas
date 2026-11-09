@@ -6,7 +6,7 @@ interface DraMarthaSanchezViewProps {
 }
 
 const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbw1S53Uf_nC1JLTFKg8O-KO2euTqvGS8nZJe0e2pmDv1Iv3uLZel6FHoJ8azDL5yB0D/exec';
+  'https://script.google.com/macros/s/AKfycbxbKrPuK27sUMvyabk4hmV8tC5llW6guhXXPN8D_1CW4CcssmzG3qxj4aE74-HHgVfF/exec';
 
 export default function DraMarthaSanchezView({ onBackToHome }: DraMarthaSanchezViewProps) {
   return (
